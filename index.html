@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Qué Necesitas Escuchar Hoy? · Mindful Wellness</title>
+<meta name="description" content="31 tarjetas para 31 días: una frase, una tarea y una reflexión para volver a ti. Primera edición limitada por Monica Villalba.">
+<meta property="og:title" content="¿Qué Necesitas Escuchar Hoy? · Primera edición">
+<meta property="og:description" content="31 tarjetas · 31 días · una frase, una tarea y una reflexión para volver a ti.">
+<meta property="og:image" content="assets/es-portada.jpg">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================
+   CONFIGURACIÓN RÁPIDA → archivo config.js
+   (precios, enlaces de pago, registro de pedidos, WhatsApp)
+   ===================================================== */
+:root{
+  --wine:#4E1A38; --wine-2:#6B2A4E; --plum-ink:#2E0F22;
+  --cream:#FBF6EF; --gold:#C9A45C; --gold-soft:#E7D3A6;
+  --lilac:#EEE4F3; --lilac-2:#DCCBE8;
+  --purple:#4C0054; --green:#183D23; --sage:#7FA58A;
+  --ink:#2B2230; --muted:#6E6175; --line:#E6DCEB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Nunito Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+html[data-lang="es"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="es"]{display:none!important}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(78,26,56,.96);backdrop-filter:blur(6px);color:var(--cream)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.brand{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-actions{display:flex;gap:8px;align-items:center}
+.lang{display:flex;border:1px solid rgba(231,211,166,.5);border-radius:99px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--gold-soft);font:600 .78rem "Nunito Sans";padding:6px 10px;cursor:pointer}
+.lang button.on{background:var(--gold);color:var(--plum-ink)}
+.btn-mini{background:var(--gold);color:var(--plum-ink);text-decoration:none;font-weight:700;font-size:.85rem;padding:8px 14px;border-radius:99px;white-space:nowrap}
+
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(120% 90% at 50% 10%,#6A2A57 0%,#4A1B3D 50%,#2A0D21 100%);color:var(--cream);position:relative;overflow:hidden;padding:56px 0 72px;text-align:center}
+.hero::before{content:"";position:absolute;inset:18px;border:1px solid rgba(201,164,92,.45);border-radius:22px;pointer-events:none}
+.logo-badge{width:150px;margin:0 auto 26px;background:var(--cream);border-radius:20px;padding:12px 14px}
+.eyebrow{display:inline-block;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem;font-weight:700;color:var(--gold-soft);border:1px solid rgba(201,164,92,.6);border-radius:99px;padding:6px 14px;margin-bottom:20px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.5rem,8vw,4.6rem);line-height:1.02;margin-bottom:18px}
+.hero h1 em{color:var(--gold-soft);font-weight:500}
+.hero p.lead{max-width:560px;margin:0 auto 30px;font-size:1.1rem;color:#F1E5EC}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--plum-ink);font-weight:700;font-size:1.05rem;text-decoration:none;padding:16px 30px;border-radius:99px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
+.hero small{display:block;margin-top:14px;color:var(--gold-soft);font-size:.85rem}
+
+/* fanned cards */
+.fan{position:relative;height:300px;max-width:520px;margin:46px auto 0}
+.fan .card{position:absolute;left:50%;top:10px;width:190px;transform-origin:50% 120%}
+.fan .c1{transform:translateX(-50%) rotate(-14deg) translateX(-70px)}
+.fan .c2{transform:translateX(-50%) rotate(0deg);z-index:2;top:0}
+.fan .c3{transform:translateX(-50%) rotate(14deg) translateX(70px)}
+
+/* ---------- card (matches printed design) ---------- */
+.card{aspect-ratio:1122/1402;background:linear-gradient(180deg,#F4ECF7,var(--lilac));border-radius:14px;box-shadow:0 14px 34px rgba(30,6,22,.35);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16% 9%}
+.card::before,.card::after{content:"";position:absolute;width:46%;height:46%;border-radius:0 100% 0 100%;opacity:.55}
+.card::before{left:-16%;bottom:-12%;background:linear-gradient(135deg,#B892CC,#7E4F9A);transform:rotate(-8deg)}
+.card::after{right:-16%;top:-12%;background:linear-gradient(135deg,#A9C9B2,#5E8C6C);transform:rotate(172deg)}
+.card .ribbon{position:absolute;top:7%;left:50%;transform:translateX(-50%);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);font-weight:700;white-space:nowrap}
+.card .l1{font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--purple);font-size:1.05rem;line-height:1.1;position:relative;z-index:1}
+.card .l2{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--green);font-size:.9rem;line-height:1.15;margin-top:6px;position:relative;z-index:1}
+.card .theme{position:absolute;bottom:9%;left:50%;transform:translateX(-50%);font-size:.48rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:1px solid var(--lilac-2);padding-top:4px;white-space:nowrap}
+
+/* ---------- sections ---------- */
+section{padding:72px 0}
+.kicker{text-align:center;letter-spacing:.2em;text-transform:uppercase;font-size:.75rem;font-weight:700;color:var(--wine-2);margin-bottom:10px}
+h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2rem,5vw,2.9rem);line-height:1.1;text-align:center;color:var(--wine);margin-bottom:16px}
+h2 em{color:var(--green);font-weight:500}
+.sub{text-align:center;max-width:620px;margin:0 auto 40px;color:var(--muted);font-size:1.05rem}
+
+.story{background:#fff}
+.story-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;max-width:860px;margin:0 auto}
+.story blockquote{font-family:"Cormorant Garamond",serif;font-size:1.45rem;line-height:1.35;color:var(--wine);font-style:italic}
+.story p{color:var(--muted);margin-top:14px}
+
+.steps{display:grid;grid-template-columns:1fr;gap:16px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center}
+.step .n{width:44px;height:44px;border-radius:50%;background:var(--wine);color:var(--gold-soft);display:grid;place-items:center;margin:0 auto 12px;font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600}
+.step h3{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--wine);margin-bottom:4px}
+.step p{color:var(--muted);font-size:.95rem}
+
+.themes{background:var(--lilac)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:720px;margin:0 auto}
+.chip{background:#fff;border:1px solid var(--lilac-2);color:var(--purple);border-radius:99px;padding:10px 18px;font-weight:600;font-size:.95rem}
+.cards-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:720px;margin:40px auto 0}
+.cards-row .card{box-shadow:0 8px 20px rgba(78,26,56,.15)}
+
+.inside{display:grid;grid-template-columns:1fr;gap:14px;max-width:720px;margin:0 auto}
+.inside li{list-style:none;display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.inside li span.ic{flex:none;width:32px;height:32px;border-radius:50%;background:var(--lilac);color:var(--purple);display:grid;place-items:center;font-weight:700}
+
+/* ---------- order ---------- */
+.order{background:linear-gradient(180deg,var(--wine) 0%,var(--plum-ink) 100%);color:var(--cream)}
+.order h2{color:var(--cream)} .order h2 em{color:var(--gold-soft)} .order .kicker{color:var(--gold-soft)}
+.order .sub{color:#E9DCE4}
+.plans{display:grid;grid-template-columns:1fr;gap:18px;max-width:820px;margin:0 auto}
+.plan{background:var(--cream);color:var(--ink);border-radius:22px;padding:28px 24px;position:relative;border:2px solid transparent}
+.plan.best{border-color:var(--gold)}
+.tag{position:absolute;top:-13px;left:24px;background:var(--gold);color:var(--plum-ink);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
+.plan h3{font-family:"Cormorant Garamond",serif;font-size:1.7rem;color:var(--wine);line-height:1.1}
+.plan .desc{color:var(--muted);font-size:.95rem;margin:6px 0 14px}
+.price{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.price .now{font-family:"Cormorant Garamond",serif;font-size:2.8rem;font-weight:600;color:var(--purple);line-height:1}
+.price .was{text-decoration:line-through;color:var(--muted)}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;font-weight:700;color:var(--wine);margin-bottom:6px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:110px;border:1.5px solid var(--lilac-2);background:#fff;color:var(--purple);border-radius:12px;padding:10px;font:600 .9rem "Nunito Sans";cursor:pointer}
+.seg button.on{background:var(--purple);border-color:var(--purple);color:#fff}
+.pay{display:block;width:100%;text-align:center;text-decoration:none;background:var(--wine);color:var(--cream);font-weight:700;padding:15px;border-radius:14px;margin-top:6px;border:0;font-size:1rem;cursor:pointer}
+.pay:hover{background:var(--wine-2)}
+.pay.disabled,.pay:disabled{opacity:.45;pointer-events:auto;cursor:not-allowed}
+.pay.alt{background:transparent;color:var(--wine);border:1.5px solid var(--wine);margin-top:10px}
+.note{font-size:.8rem;color:var(--muted);margin-top:10px;text-align:center}
+
+.zelle{max-width:820px;margin:26px auto 0;background:rgba(255,255,255,.06);border:1px solid rgba(201,164,92,.4);border-radius:22px;padding:24px;display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
+.zelle img{width:190px;border-radius:14px;margin:0 auto;background:#fff}
+.zelle h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--gold-soft)}
+.zelle p{color:#EADFE6;font-size:.95rem;margin-top:6px}
+.zelle .pay{background:#25D366;color:#073B1E;margin-top:14px}
+
+.limited{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 34px;color:var(--gold-soft);font-weight:600;font-size:.95rem}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(201,164,92,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(201,164,92,0)}100%{box-shadow:0 0 0 0 rgba(201,164,92,0)}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center;max-width:820px;margin:0 auto;text-align:center}
+.about img{width:170px;height:170px;border-radius:50%;object-fit:cover;margin:0 auto;border:4px solid var(--lilac)}
+.about h3{font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--wine)}
+.about .role{color:var(--purple);font-weight:600;font-size:.92rem;margin-bottom:10px}
+.about p{color:var(--muted)}
+
+/* ---------- faq ---------- */
+.faq{background:#fff}
+details{max-width:760px;margin:0 auto 12px;border:1px solid var(--line);border-radius:16px;background:var(--cream);padding:4px 20px}
+summary{cursor:pointer;list-style:none;font-weight:700;color:var(--wine);padding:14px 0;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--gold)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding-bottom:16px}
+
+footer{background:var(--plum-ink);color:#CDBCC6;text-align:center;padding:40px 20px 90px;font-size:.88rem}
+footer a{color:var(--gold-soft);text-decoration:none}
+footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+
+/* sticky buy bar on phones */
+.buybar{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--wine);color:var(--cream);border:1px solid rgba(201,164,92,.5);border-radius:18px;padding:10px 12px 10px 18px;box-shadow:0 10px 30px rgba(0,0,0,.3);transform:translateY(140%);transition:transform .3s}
+.buybar.show{transform:none}
+.buybar b{font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--gold-soft)}
+.buybar span{font-size:.8rem;display:block;color:#E9DCE4}
+
+@media(min-width:760px){
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .cards-row{grid-template-columns:repeat(4,1fr)}
+  .plans{grid-template-columns:1fr 1fr}
+  .zelle{grid-template-columns:200px 1fr;padding:28px 34px}
+  .story-grid{grid-template-columns:1.2fr 1fr}
+  .about-grid{grid-template-columns:200px 1fr;text-align:left}
+  .fan{height:360px} .fan .card{width:230px}
+  .fan .c1{transform:translateX(-50%) rotate(-14deg) translateX(-90px)}
+  .fan .c3{transform:translateX(-50%) rotate(14deg) translateX(90px)}
+  .card .l1{font-size:1.25rem} .card .l2{font-size:1.05rem}
+  .buybar{display:none}
+}
+
+/* real images */
+#petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.fan{position:relative;height:290px;max-width:560px;margin:44px auto 0}
+.fan .shot{position:absolute;left:50%;top:20px;width:150px;transform-origin:50% 120%}
+.fan .shot img{width:100%;border-radius:10px;box-shadow:0 18px 40px rgba(20,4,14,.55)}
+.fan .s1{transform:translateX(-50%) rotate(-12deg) translateX(-62px)}
+.fan .s3{transform:translateX(-50%) rotate(12deg) translateX(62px)}
+.fan .s2{transform:translateX(-50%);z-index:2;top:0;width:180px;animation:float 6s ease-in-out infinite}
+.fan .s2 img{border:1px solid rgba(201,164,92,.7)}
+@keyframes float{50%{transform:translateX(-50%) translateY(-8px)}}
+.real{margin:0}
+.real img{width:100%;border-radius:10px;box-shadow:0 10px 26px rgba(78,26,56,.18)}
+.real figcaption{text-align:center;font-size:.85rem;font-weight:700;color:var(--wine);margin-top:10px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:560px;margin:36px auto 0}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:440px;margin:0 auto 30px}
+.covers img{width:100%;border-radius:10px;border:1px solid rgba(201,164,92,.55);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.launch{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--sage);padding:3px 9px;border-radius:99px;align-self:center}
+.price{flex-wrap:wrap}
+@media(min-width:760px){.fan{height:420px}.fan .shot{width:230px}.fan .s2{width:260px}
+ .fan .s1{transform:translateX(-50%) rotate(-12deg) translateX(-120px)}.fan .s3{transform:translateX(-50%) rotate(12deg) translateX(120px)}}
+
+.zform{margin-top:16px;display:grid;gap:10px}
+.zrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.zrow.one{grid-template-columns:1fr}
+.zform label{display:flex;flex-direction:column;gap:4px;font-size:.78rem;font-weight:700;color:var(--gold-soft)}
+.zform input,.zform select,.zform textarea{font:400 16px "Nunito Sans";padding:10px 12px;border-radius:10px;border:1px solid rgba(231,211,166,.45);background:rgba(255,255,255,.95);color:var(--ink);width:100%}
+.zform .pay{background:#25D366;color:#073B1E;margin-top:4px}
+@media(max-width:420px){.zrow{grid-template-columns:1fr}}
+
+.shipcalc{max-width:820px;margin:22px auto 0;background:var(--cream);color:var(--ink);border-radius:22px;padding:22px 24px}
+.shipcalc h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--wine);line-height:1.1}
+.sc-sub{color:var(--muted);font-size:.88rem;margin-bottom:12px}
+.shipcalc label{display:flex;flex-direction:column;gap:6px;font-size:.82rem;font-weight:700;color:var(--wine)}
+.shipcalc select{font:400 16px "Nunito Sans";padding:10px 12px;border-radius:10px;border:1px solid var(--lilac-2);background:#fff;max-width:360px}
+.sc-out{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sc-out div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:.9rem;color:var(--muted)}
+.sc-out b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--purple);line-height:1.1}
+.sc-out .reg{grid-column:1/-1;background:var(--lilac);border:0;color:var(--purple);font-weight:700}
+.sc-fine{font-size:.8rem;color:var(--muted);margin-top:12px}.sc-fine a{color:var(--wine);font-weight:700}
+.zrow.three{grid-template-columns:1.3fr 1fr .8fr}
+.zaddr{display:grid;gap:10px}
+.ztotal{background:rgba(255,255,255,.95);color:var(--ink);border-radius:12px;padding:12px 14px;font-size:.92rem;line-height:1.5}
+.ztotal b{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--purple)}
+@media(max-width:420px){.zrow.three{grid-template-columns:1fr 1fr}.zrow.three label:first-child{grid-column:1/-1}}
+
+/* ---------- order builder ---------- */
+.builder{max-width:760px;margin:0 auto;display:grid;gap:16px}
+.bstep{background:var(--cream);color:var(--ink);border-radius:22px;padding:24px 22px}
+.bhead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.bnum{flex:none;width:34px;height:34px;border-radius:50%;background:var(--wine);color:var(--gold-soft);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:600}
+.bstep h3{font-family:"Cormorant Garamond",serif;font-size:1.55rem;color:var(--wine);line-height:1.15}
+.bstep .price{margin-bottom:4px}
+.pnote{font-size:.9rem;color:var(--muted);margin-bottom:12px}
+.pnote:empty{display:none}
+.pnote.gift{margin:12px 0 0;color:var(--purple);font-weight:600}
+.qtys{display:grid;gap:10px}
+.qty{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1.5px solid var(--lilac-2);border-radius:14px;padding:12px 14px}
+.qty b{display:block;color:var(--purple);font-size:1.05rem}
+.qty small{color:var(--muted);font-size:.82rem}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--purple);background:#fff;color:var(--purple);font-size:1.4rem;line-height:1;cursor:pointer}
+.stepper button:disabled{opacity:.35;cursor:default}
+.stepper output{min-width:34px;text-align:center;font-weight:700;font-size:1.2rem;color:var(--ink)}
+.deliv{display:grid;gap:10px}
+.dopt{display:flex;align-items:center;gap:14px;text-align:left;background:#fff;border:1.5px solid var(--lilac-2);border-radius:14px;padding:14px;cursor:pointer;font:inherit;color:var(--ink)}
+.dopt b{display:block;color:var(--wine);font-size:1.02rem}
+.dopt small{color:var(--muted);font-size:.84rem}
+.dopt .dic{font-size:1.5rem;flex:none}
+.dopt.on{border-color:var(--purple);background:var(--lilac);box-shadow:0 0 0 2px var(--purple) inset}
+.shipst{margin-top:14px}
+.shipst label{display:flex;flex-direction:column;gap:6px;font-size:.84rem;font-weight:700;color:var(--wine)}
+.shipst select{font:400 16px "Nunito Sans";padding:11px 12px;border-radius:10px;border:1px solid var(--lilac-2);background:#fff;max-width:360px}
+.summary{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.95rem;line-height:1.7}
+.summary .row{display:flex;justify-content:space-between;gap:12px}
+.summary .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-weight:700;color:var(--wine)}
+.summary .tot b{font-family:"Cormorant Garamond",serif;font-size:1.7rem;color:var(--purple)}
+.summary .msg{color:var(--muted);font-size:.86rem;margin-top:6px}
+.paytabs{display:flex;gap:8px;margin:16px 0 12px}
+.ptab{flex:1;border:1.5px solid var(--lilac-2);background:#fff;color:var(--purple);border-radius:12px;padding:11px;font:700 .95rem "Nunito Sans";cursor:pointer}
+.ptab.on{background:var(--purple);border-color:var(--purple);color:#fff}
+.pay.wa{background:#25D366;color:#073B1E}
+.zbox{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+.zbox img{width:120px;border-radius:12px;flex:none}
+.zbox p{font-size:.9rem;color:var(--muted)}
+.zform label{color:var(--wine)!important}
+.zform input{border-color:var(--lilac-2)!important}
+@media(max-width:420px){.zbox{flex-direction:column;text-align:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span lang="es">¿Qué Necesitas Escuchar Hoy?</span><span lang="en">What Do You Need to Hear Today?</span></div>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" class="on">ES</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+      <a class="btn-mini" href="#ordenar"><span lang="es">Ordenar</span><span lang="en">Order</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <img class="logo-badge" src="assets/logo.png" alt="Mindful Wellness">
+    <div class="eyebrow"><span lang="es">Primera edición · Edición limitada</span><span lang="en">First edition · Limited edition</span></div>
+    <h1 lang="es">¿Qué Necesitas<br><em>Escuchar Hoy?</em></h1>
+    <h1 lang="en">What Do You Need<br><em>to Hear Today?</em></h1>
+    <p class="lead" lang="es">31 tarjetas para 31 días. Cada mañana, una frase para tu corazón, una tarea pequeña y una pregunta para volver a ti.</p>
+    <p class="lead" lang="en">31 cards for 31 days. Each morning, a phrase for your heart, a small task, and a question to come back to yourself.</p>
+    <a class="cta" href="#ordenar"><span lang="es">Quiero mi cajita</span><span lang="en">I want my box</span> →</a>
+    <small><span lang="es">Primera edición · Edición limitada</span><span lang="en">First edition · Limited edition</span></small>
+
+    <div class="fan">
+      <div class="shot s1"><img class="" lang="es" src="assets/es-frente.jpg" alt="Tarjeta, frente" loading="lazy"><img class="" lang="en" src="assets/en-front.jpg" alt="Card, front" loading="lazy"></div>
+      <div class="shot s2"><img class="" lang="es" src="assets/es-portada.jpg" alt="Portada de la cajita ¿Qué Necesitas Escuchar Hoy?" loading="lazy"><img class="" lang="en" src="assets/en-cover.jpg" alt="Box cover What Do You Need to Hear Today?" loading="lazy"></div>
+      <div class="shot s3"><img class="" lang="es" src="assets/es-reverso.jpg" alt="Tarjeta, reverso con tarea y reflexión" loading="lazy"><img class="" lang="en" src="assets/en-back.jpg" alt="Card, back with task and reflection" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap story-grid">
+    <blockquote lang="es">“Sé lo que quiero hacer… pero a veces me pierdo en el día a día.”</blockquote>
+    <blockquote lang="en">“I know what I want to do… but sometimes I get lost in the day-to-day.”</blockquote>
+    <div>
+      <p lang="es">Es algo que escucho muchísimo acompañando a otras mujeres. Muchas veces no necesitamos que alguien nos dé todas las respuestas: necesitamos detenernos, escucharnos y recordar algo que ya sabemos pero hemos olvidado.</p>
+      <p lang="en">I hear this so often when I walk alongside other women. Many times we don't need someone to give us every answer — we need to pause, listen to ourselves, and remember something we already know but have forgotten.</p>
+      <p lang="es"><strong>De esa pregunta nació esta cajita.</strong></p>
+      <p lang="en"><strong>This box was born from that question.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section>
+  <div class="wrap">
+    <div class="kicker"><span lang="es">Cómo funciona</span><span lang="en">How it works</span></div>
+    <h2 lang="es">Una tarjeta. <em>Un momento para ti.</em></h2>
+    <h2 lang="en">One card. <em>One moment for you.</em></h2>
+    <p class="sub" lang="es">Solo necesitas unos minutos cada mañana. No tienes que hacerlo perfecto.</p>
+    <p class="sub" lang="en">All you need is a few minutes each morning. It doesn't have to be perfect.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3><span lang="es">Lee</span><span lang="en">Read</span></h3>
+        <p lang="es">El frente trae una frase para empezar tu día con intención.</p><p lang="en">The front holds a phrase to start your day with intention.</p></div>
+      <div class="step"><div class="n">2</div><h3><span lang="es">Haz</span><span lang="en">Do</span></h3>
+        <p lang="es">Al reverso, una tarea concreta y sencilla que te acerca a tus metas.</p><p lang="en">On the back, a simple, concrete task that moves you toward your goals.</p></div>
+      <div class="step"><div class="n">3</div><h3><span lang="es">Reflexiona</span><span lang="en">Reflect</span></h3>
+        <p lang="es">Una pregunta para escucharte. Escríbela, piénsala o llévala contigo.</p><p lang="en">A question to listen to yourself. Write it, think it, or carry it with you.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="real"><img class="" lang="es" src="assets/es-frente.jpg" alt="Frente de la tarjeta 1" loading="lazy"><img class="" lang="en" src="assets/en-front.jpg" alt="Front of card 1" loading="lazy"><figcaption><span lang="es">Frente · la frase</span><span lang="en">Front · the phrase</span></figcaption></figure>
+      <figure class="real"><img class="" lang="es" src="assets/es-reverso.jpg" alt="Reverso de la tarjeta 1" loading="lazy"><img class="" lang="en" src="assets/en-back.jpg" alt="Back of card 1" loading="lazy"><figcaption><span lang="es">Reverso · tarea y reflexión</span><span lang="en">Back · task and reflection</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="themes">
+  <div class="wrap">
+    <div class="kicker"><span lang="es">Dentro de la cajita</span><span lang="en">Inside the box</span></div>
+    <h2 lang="es">8 caminos para <em>volver a ti</em></h2>
+    <h2 lang="en">8 paths to <em>come back to yourself</em></h2>
+    <div class="chips">
+      <span class="chip"><span lang="es">Enfoque</span><span lang="en">Focus</span></span>
+      <span class="chip"><span lang="es">Disciplina</span><span lang="en">Discipline</span></span>
+      <span class="chip"><span lang="es">Confianza</span><span lang="en">Confidence</span></span>
+      <span class="chip"><span lang="es">Acción</span><span lang="en">Action</span></span>
+      <span class="chip"><span lang="es">Bienestar</span><span lang="en">Well-being</span></span>
+      <span class="chip"><span lang="es">Amor propio</span><span lang="en">Self-Love</span></span>
+      <span class="chip"><span lang="es">Perseverancia</span><span lang="en">Perseverance</span></span>
+      <span class="chip"><span lang="es">Visión</span><span lang="en">Vision</span></span>
+    </div>
+    <div class="cards-row">
+      <figure class="real"><img class="" lang="es" src="assets/es-disciplina.jpg" alt="Tarjeta real de la cajita" loading="lazy"><img class="" lang="en" src="assets/en-discipline.jpg" alt="Real card from the box" loading="lazy"></figure>
+      <figure class="real"><img class="" lang="es" src="assets/es-confianza.jpg" alt="Tarjeta real de la cajita" loading="lazy"><img class="" lang="en" src="assets/en-confidence.jpg" alt="Real card from the box" loading="lazy"></figure>
+      <figure class="real"><img class="" lang="es" src="assets/es-bienestar.jpg" alt="Tarjeta real de la cajita" loading="lazy"><img class="" lang="en" src="assets/en-wellbeing.jpg" alt="Real card from the box" loading="lazy"></figure>
+      <figure class="real"><img class="" lang="es" src="assets/es-amor.jpg" alt="Tarjeta real de la cajita" loading="lazy"><img class="" lang="en" src="assets/en-front.jpg" alt="Real card from the box" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="wrap">
+    <div class="kicker"><span lang="es">Lo que recibes</span><span lang="en">What you receive</span></div>
+    <h2 lang="es">Hecha con <em>intención</em>, de principio a fin</h2>
+    <h2 lang="en">Made with <em>intention</em>, start to finish</h2>
+    <ul class="inside">
+      <li><span class="ic">31</span><div lang="es"><strong>31 tarjetas</strong> con una frase, una tarea y una reflexión. Sin fechas: empiezas el día que tú decidas.</div><div lang="en"><strong>31 cards</strong>, each with a phrase, a task and a reflection. Undated: start whenever you choose.</div></li>
+      <li><span class="ic">✿</span><div lang="es"><strong>8 caminos para volver a ti:</strong> enfoque, disciplina, confianza, acción, bienestar, amor propio, perseverancia y visión.</div><div lang="en"><strong>8 paths back to yourself:</strong> focus, discipline, confidence, action, well-being, self-love, perseverance and vision.</div></li>
+      <li><span class="ic">ES</span><div lang="es"><strong>En español o en inglés.</strong> Elige cuántas quieres de cada versión al ordenar.</div><div lang="en"><strong>In Spanish or English.</strong> Choose how many of each version when you order.</div></li>
+      <li><span class="ic">♡</span><div lang="es"><strong>Tú eliges cómo recibirla:</strong> por correo, recogiéndola en un punto o con entrega a domicilio local.</div><div lang="en"><strong>You choose how to receive it:</strong> by mail, at a pickup point or with local home delivery.</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="order" id="ordenar">
+  <div class="wrap">
+    <div class="kicker"><span lang="es">Ordena la tuya</span><span lang="en">Order yours</span></div>
+    <h2 lang="es">Hoy puede ser el día <em>en que te eliges</em></h2>
+    <h2 lang="en">Today can be the day <em>you choose yourself</em></h2>
+    <div class="covers"><img lang="es" src="assets/es-portada.jpg" alt="Portada"><img lang="es" src="assets/es-contraportada.jpg" alt="Contraportada"><img lang="en" src="assets/en-cover.jpg" alt="Cover"><img lang="en" src="assets/en-backcover.jpg" alt="Back cover"></div>
+    <div class="limited"><span class="dot"></span><span lang="es">Primera edición · Edición limitada</span><span lang="en">First edition · Limited edition</span></div>
+
+    <div class="builder">
+      <!-- 1 · Cantidad -->
+      <div class="bstep">
+        <div class="bhead"><span class="bnum">1</span><h3><span lang="es">¿Cuántas cajitas quieres?</span><span lang="en">How many boxes?</span></h3></div>
+        <div class="price"><span class="now" id="unit-now"></span><span class="was" id="unit-was"></span><span class="launch"><span lang="es">Lanzamiento · hasta el sábado</span><span lang="en">Launch · until Saturday</span></span></div>
+        <p class="pnote" id="pair-note"></p>
+        <div class="qtys">
+          <div class="qty" data-v="es">
+            <div><b>Español</b><small><span lang="es">versión en español</span><span lang="en">Spanish version</span></small></div>
+            <div class="stepper"><button type="button" data-d="-1" aria-label="Menos">−</button><output>1</output><button type="button" data-d="1" aria-label="Más">+</button></div>
+          </div>
+          <div class="qty" data-v="en">
+            <div><b>English</b><small><span lang="es">versión en inglés</span><span lang="en">English version</span></small></div>
+            <div class="stepper"><button type="button" data-d="-1" aria-label="Less">−</button><output>0</output><button type="button" data-d="1" aria-label="More">+</button></div>
+          </div>
+        </div>
+        <p class="pnote gift" id="gift-hint"><span lang="es">💜 ¿Una para ti y otra para alguien que amas? Suma las que quieras regalar.</span><span lang="en">💜 One for you and one for someone you love? Add as many as you'd like to gift.</span></p>
+      </div>
+
+      <!-- 2 · Entrega -->
+      <div class="bstep">
+        <div class="bhead"><span class="bnum">2</span><h3><span lang="es">¿De qué manera deseas recibir tu cajita?</span><span lang="en">How would you like to receive your box?</span></h3></div>
+        <div class="deliv" role="radiogroup">
+          <button type="button" class="dopt on" data-d="envio" role="radio" aria-checked="true">
+            <span class="dic">📦</span><span><b><span lang="es">Envío por correo</span><span lang="en">Mail delivery</span></b>
+            <small><span lang="es">USPS a cualquier estado de EE. UU. · 2–5 días hábiles</span><span lang="en">USPS to any U.S. state · 2–5 business days</span></small></span></button>
+          <button type="button" class="dopt" data-d="punto" role="radio" aria-checked="false">
+            <span class="dic">📍</span><span><b><span lang="es">La recojo en un punto</span><span lang="en">I'll pick it up</span></b>
+            <small><span lang="es">Acordamos el lugar y la hora por WhatsApp</span><span lang="en">We'll agree on the place and time on WhatsApp</span></small></span></button>
+          <button type="button" class="dopt" data-d="domicilio" role="radio" aria-checked="false">
+            <span class="dic">🏡</span><span><b><span lang="es">Entrega a domicilio local</span><span lang="en">Local home delivery</span></b>
+            <small><span lang="es">En zonas cercanas · la coordinamos por WhatsApp</span><span lang="en">Nearby areas · we'll coordinate on WhatsApp</span></small></span></button>
+        </div>
+        <div class="shipst" id="ship-state">
+          <label><span lang="es">¿A qué estado enviamos?</span><span lang="en">Which state are we shipping to?</span>
+            <select id="sc-state" class="state-select"></select></label>
+          <p class="sc-fine"><span lang="es">Tarifas oficiales de USPS desde Nueva Jersey. ¿Fuera de EE. UU.? <a data-wa="intl" href="#" target="_blank" rel="noopener">Escríbenos</a> y te cotizamos.</span><span lang="en">Official USPS rates from New Jersey. Outside the U.S.? <a data-wa="intl" href="#" target="_blank" rel="noopener">Message us</a> for a quote.</span></p>
+        </div>
+      </div>
+
+      <!-- 3 · Pago -->
+      <div class="bstep">
+        <div class="bhead"><span class="bnum">3</span><h3><span lang="es">Tu pedido</span><span lang="en">Your order</span></h3></div>
+        <div class="summary" id="summary"></div>
+        <div class="paytabs" role="tablist">
+          <button type="button" class="ptab on" data-m="card" role="tab"><span lang="es">💳 Tarjeta</span><span lang="en">💳 Card</span></button>
+          <button type="button" class="ptab" data-m="zelle" role="tab">Zelle</button>
+        </div>
+        <div class="pm" id="pm-card">
+          <a class="pay" id="pay-card" href="#"><span lang="es">Pagar con tarjeta</span><span lang="en">Pay by card</span></a>
+          <p class="note" id="card-note"></p>
+        </div>
+        <div class="pm" id="pm-zelle" hidden>
+          <div class="zbox">
+            <img src="assets/zelle-qr.jpg" alt="Código QR de Zelle · Mindful Wellness & Coaching LLC">
+            <p><span lang="es">Escanea el código o envía el total a <strong>Mindful Wellness &amp; Coaching LLC</strong> al <strong>201-679-9969</strong>.</span><span lang="en">Scan the code or send the total to <strong>Mindful Wellness &amp; Coaching LLC</strong> at <strong>201-679-9969</strong>.</span></p>
+          </div>
+          <form id="zelle-form" class="zform" autocomplete="on">
+            <div class="zrow">
+              <label><span lang="es">Tu nombre</span><span lang="en">Your name</span><input name="nombre" required autocomplete="name"></label>
+              <label><span lang="es">Tu WhatsApp</span><span lang="en">Your WhatsApp</span><input name="telefono" type="tel" required autocomplete="tel" inputmode="tel"></label>
+            </div>
+            <button class="pay wa" type="submit"><span lang="es">Ya pagué · Confirmar por WhatsApp</span><span lang="en">I paid · Confirm on WhatsApp</span></button>
+            <p class="note"><span lang="es">Se abre un chat de WhatsApp con Monica (201-679-9969) con tu pedido ya escrito. Solo adjunta la foto del comprobante y envía.</span><span lang="en">A WhatsApp chat with Monica (201-679-9969) opens with your order already written. Just attach your receipt and send.</span></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="wrap about-grid">
+    <img src="assets/monica.jpg" alt="Monica Villalba">
+    <div>
+      <h3>Monica Villalba</h3>
+      <div class="role"><span lang="es">Psicóloga · Coach certificada de Salud y Bienestar · Mindful Wellness NYC</span><span lang="en">Psychologist · Certified Health &amp; Wellness Coach · Mindful Wellness NYC</span></div>
+      <p lang="es">Por más de 25 años he acompañado a mujeres en su bienestar, su crecimiento y sus metas. Esta cajita reúne lo que más repito en mis sesiones, para que lo tengas contigo cada mañana.</p>
+      <p lang="en">For over 25 years I've walked alongside women in their well-being, growth and goals. This box gathers what I repeat most in my sessions, so you can carry it with you every morning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="kicker"><span lang="es">Preguntas frecuentes</span><span lang="en">FAQ</span></div>
+    <h2 lang="es">Antes de <em>ordenar</em></h2>
+    <h2 lang="en">Before you <em>order</em></h2>
+    <details><summary><span lang="es">¿Tengo que empezar el primer día del mes?</span><span lang="en">Do I have to start on the 1st of the month?</span></summary>
+      <p lang="es">No. Las tarjetas no tienen fecha: empiezas el día que tú decidas y avanzas una tarjeta por día.</p>
+      <p lang="en">No. The cards are undated: start any day you choose and use one card per day.</p></details>
+    <details><summary><span lang="es">¿Cómo y cuándo recibo mi cajita?</span><span lang="en">How and when will I receive my box?</span></summary>
+      <p lang="es">Al ordenar eliges cómo quieres recibirla:<br>
+        <strong>📦 Envío por correo:</strong> la enviamos por USPS desde Nueva Jersey a cualquier estado de EE. UU. Llega en 2 a 5 días hábiles y el costo depende de tu estado; lo ves antes de pagar. Te mandamos el número de seguimiento por WhatsApp.<br>
+        <strong>📍 La recoges en un punto:</strong> sin costo de envío. Acordamos contigo el lugar y la hora por WhatsApp.<br>
+        <strong>🏡 Entrega a domicilio local:</strong> en zonas cercanas. La coordinamos contigo por WhatsApp.<br>
+        Apenas recibimos tu pago te escribimos por WhatsApp para confirmar todo.</p>
+      <p lang="en">When you order, you choose how to receive it:<br>
+        <strong>📦 Mail delivery:</strong> we ship via USPS from New Jersey to any U.S. state. It arrives in 2–5 business days and the cost depends on your state — you'll see it before you pay. We'll send your tracking number on WhatsApp.<br>
+        <strong>📍 Pickup point:</strong> no shipping cost. We'll agree on the place and time with you on WhatsApp.<br>
+        <strong>🏡 Local home delivery:</strong> in nearby areas. We'll coordinate it with you on WhatsApp.<br>
+        As soon as we receive your payment, we'll message you on WhatsApp to confirm everything.</p></details>
+    <details><summary><span lang="es">¿Puedo regalarla?</span><span lang="en">Can I give it as a gift?</span></summary>
+      <p lang="es">Sí, y es uno de los regalos más bonitos que puedes dar. Piensa en esa mujer que siempre está para todos y casi nunca para ella: tu mamá, tu hermana, tu amiga del alma. Esta cajita le recuerda, cada mañana, que alguien pensó en ella y que ella también merece elegirse. Suma las cajitas que quieras regalar y, si quieres, la enviamos directo a su puerta. Escríbenos por WhatsApp el mensaje que quieres que le llegue y lo acompañamos con todo nuestro cariño.</p>
+      <p lang="en">Yes — and it's one of the most beautiful gifts you can give. Think of that woman who is always there for everyone and rarely for herself: your mom, your sister, your soul friend. Every morning, this box reminds her that someone thought of her and that she deserves to choose herself too. Add as many boxes as you'd like to gift and, if you wish, we'll send it straight to her door. Send us on WhatsApp the message you want her to receive and we'll include it with all our love.</p></details>
+    <details><summary><span lang="es">¿En qué idiomas está?</span><span lang="en">Which languages are available?</span></summary>
+      <p lang="es">En español y en inglés, con el mismo diseño. Elige la versión al ordenar.</p>
+      <p lang="en">Spanish and English, same design. Choose your version when you order.</p></details>
+    <details><summary><span lang="es">Tengo otra pregunta</span><span lang="en">I have another question</span></summary>
+      <p><a data-wa="question" href="#" target="_blank" rel="noopener" style="color:var(--wine);font-weight:700"><span lang="es">Escríbenos por WhatsApp →</span><span lang="en">Message us on WhatsApp →</span></a></p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="serif" style="font-size:1.6rem;line-height:1.3;color:var(--gold-soft);font-style:italic"><span lang="es">La felicidad está al alcance de tus manos.<br>La felicidad depende de ti.</span><span lang="en">Happiness is within your reach.<br>Happiness depends on you.</span></div>
+  <div class="links">
+    <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">@mindfulwellnessnyc</a>
+    <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener">mindfulwellness.nyc</a>
+    <a data-wa="question" href="#" target="_blank" rel="noopener">WhatsApp 201-679-9969</a>
+  </div>
+  <div>© <span id="yr"></span> Mindful Wellness &amp; Coaching LLC</div>
+</footer>
+
+<div class="buybar" id="buybar">
+  <div><b id="bar-price"></b><span><span lang="es">Edición limitada</span><span lang="en">Limited edition</span></span></div>
+  <a class="btn-mini" href="#ordenar"><span lang="es">Quiero la mía</span><span lang="en">Get mine</span></a>
+</div>
+
+<script src="config.js"></script>
+<script>
+const LAUNCH = Date.now() < new Date(CONFIG.launchEnds).getTime();
+const PR = CONFIG.prices[LAUNCH ? "launch" : "regular"];
+const LINKS = CONFIG.stripe[LAUNCH ? "launch" : "regular"];
+const SH = CONFIG.shipping;
+
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const money = n => "$" + Number(n).toFixed(2).replace(/\.00$/, "");
+let lang = "es";
+const order = { es: 1, en: 0, delivery: "envio", state: "", method: "card" };
+
+const T = {
+  es: { box: n => n === 1 ? "1 cajita" : n + " cajitas", es: "Español", en: "Inglés", ship: "Envío USPS", region: "región",
+        pickup: "Recoger en un punto", local: "Domicilio local", agreed: "Lo acordamos por WhatsApp",
+        chooseState: "Elige tu estado para ver el envío", quote: "Para 7 o más cajitas por correo te cotizamos el envío por WhatsApp",
+        total: "Total", subtotal: "Subtotal", pair: "Lleva 2 por $45", payCard: "Pagar con tarjeta", orderWa: "Ordenar por WhatsApp",
+        cardNote: "Pago seguro con Stripe. Después del pago te llevamos a WhatsApp para confirmar tu pedido.",
+        cardNoteShip: r => "Pago seguro con Stripe. Al pagar, en envío elige «Región " + r + "». Después te llevamos a WhatsApp.",
+        waNote: "Se abre WhatsApp con tu pedido ya escrito." },
+  en: { box: n => n === 1 ? "1 box" : n + " boxes", es: "Spanish", en: "English", ship: "USPS shipping", region: "region",
+        pickup: "Pickup point", local: "Local home delivery", agreed: "We'll agree on WhatsApp",
+        chooseState: "Choose your state to see shipping", quote: "For 7+ boxes by mail we'll quote shipping on WhatsApp",
+        total: "Total", subtotal: "Subtotal", pair: "Get 2 for $45", payCard: "Pay by card", orderWa: "Order on WhatsApp",
+        cardNote: "Secure checkout with Stripe. After paying, we'll take you to WhatsApp to confirm your order.",
+        cardNoteShip: r => "Secure checkout with Stripe. At checkout, choose shipping «Region " + r + "». Then we'll take you to WhatsApp.",
+        waNote: "WhatsApp opens with your order already written." }
+};
+
+function wa(text){ return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text); }
+const qty = () => order.es + order.en;
+function productTotal(q){
+  if (PR.pair) return Math.floor(q / 2) * PR.pair + (q % 2) * PR.unit;
+  return q * PR.unit;
+}
+const regionOf = st => Object.keys(SH.regions).find(r => SH.regions[r].includes(st)) || null;
+function shipping(){
+  if (order.delivery !== "envio") return { cost: 0, ok: true };
+  const r = regionOf(order.state);
+  if (!r) return { cost: null, ok: false, reason: "state" };
+  const tier = SH.tiers.find(t => qty() <= t.max);
+  if (!tier) return { cost: null, ok: false, reason: "quote", r };
+  return { cost: tier.rates[r], ok: true, r };
+}
+function stripeLink(){
+  const q = qty();
+  if (order.delivery !== "envio") return (!LAUNCH && q >= 2 && LINKS.local2) ? LINKS.local2 : LINKS.local;
+  if (q === 1) return LINKS.envio1;
+  if (q <= 3) return LINKS.envio2_3;
+  if (q <= 6) return LINKS.envio4_6;
+  return "";
+}
+function versionsText(){
+  const t = T[lang], parts = [];
+  if (order.es) parts.push(order.es + " " + t.es);
+  if (order.en) parts.push(order.en + " " + t.en);
+  return parts.join(" + ");
+}
+function deliveryText(sh){
+  const t = T[lang];
+  if (order.delivery === "punto") return t.pickup + " (" + t.agreed.toLowerCase() + ")";
+  if (order.delivery === "domicilio") return t.local + " (" + t.agreed.toLowerCase() + ")";
+  return t.ship + (order.state ? " · " + order.state : "") + (sh && sh.cost != null ? " · " + money(sh.cost) : "");
+}
+function orderMessage(kind, extra){
+  const sh = shipping(), q = qty(), p = productTotal(q);
+  const tot = sh.cost != null ? money(p + sh.cost) : money(p) + (lang === "es" ? " + envío" : " + shipping");
+  const head = lang === "es"
+    ? (kind === "zelle" ? `Hola Monica 💜 Acabo de pagar por Zelle mi pedido ${extra.id}:` : `Hola Monica 💜 Quiero ordenar mi cajita "¿Qué Necesitas Escuchar Hoy?":`)
+    : (kind === "zelle" ? `Hi Monica 💜 I just paid by Zelle for order ${extra.id}:` : `Hi Monica 💜 I'd like to order "What Do You Need to Hear Today?":`);
+  const L = lang === "es"
+    ? [`• ${T.es.box(q)}: ${versionsText()} · ${money(p)}`, `• Entrega: ${deliveryText(sh)}`, `• Total: ${tot}`]
+    : [`• ${T.en.box(q)}: ${versionsText()} · ${money(p)}`, `• Delivery: ${deliveryText(sh)}`, `• Total: ${tot}`];
+  if (extra && extra.nombre) L.push((lang === "es" ? "• Nombre: " : "• Name: ") + extra.nombre);
+  const tail = kind === "zelle" ? (lang === "es" ? "Te adjunto el comprobante 👇" : "Here is my receipt 👇")
+                                : (lang === "es" ? "Mi nombre es:" : "My name is:");
+  return [head, ...L, tail].join("\n");
+}
+
+function render(){
+  const t = T[lang], q = qty(), p = productTotal(q), sh = shipping();
+  // price header
+  $("#unit-now").textContent = money(PR.unit);
+  $("#unit-was").textContent = PR.was ? money(PR.was) : "";
+  $$(".launch").forEach(el => el.style.display = LAUNCH ? "" : "none");
+  $("#pair-note").textContent = (lang === "es" ? "por cajita" : "per box") + (PR.pair ? " · " + t.pair : "");
+  $("#bar-price").textContent = money(PR.unit);
+  // steppers
+  $$(".qty").forEach(row => {
+    const v = row.dataset.v; row.querySelector("output").textContent = order[v];
+    row.querySelector('[data-d="-1"]').disabled = order[v] === 0 || q === 1 && order[v] === 1;
+    row.querySelector('[data-d="1"]').disabled = q >= CONFIG.maxQty;
+  });
+  // delivery
+  $$(".dopt").forEach(b => { const on = b.dataset.d === order.delivery; b.classList.toggle("on", on); b.setAttribute("aria-checked", on); });
+  $("#ship-state").hidden = order.delivery !== "envio";
+  // summary
+  let shipRow;
+  if (order.delivery === "envio") {
+    shipRow = sh.ok ? money(sh.cost) + ` <small>(${t.region} ${sh.r})</small>` : `<small>${sh.reason === "quote" ? t.quote : t.chooseState}</small>`;
+  } else shipRow = `<small>${t.agreed}</small>`;
+  const shipLabel = order.delivery === "envio" ? t.ship : order.delivery === "punto" ? t.pickup : t.local;
+  const total = sh.ok ? money(p + sh.cost) : money(p) + (sh.reason === "quote" ? " + " + (lang === "es" ? "envío" : "shipping") : "");
+  $("#summary").innerHTML =
+    `<div class="row"><span>${t.box(q)} · ${versionsText()}</span><span>${money(p)}</span></div>` +
+    `<div class="row"><span>${shipLabel}</span><span>${shipRow}</span></div>` +
+    `<div class="row tot"><span>${t.total}</span><b>${total}</b></div>`;
+  // payment method
+  $$(".ptab").forEach(b => b.classList.toggle("on", b.dataset.m === order.method));
+  $("#pm-card").hidden = order.method !== "card";
+  $("#pm-zelle").hidden = order.method !== "zelle";
+  const link = stripeLink(), pay = $("#pay-card");
+  const blocked = order.delivery === "envio" && !sh.ok && sh.reason === "state";
+  pay.classList.toggle("disabled", blocked);
+  if (link && sh.ok) {
+    pay.href = link + (link.includes("?") ? "&" : "?") + "client_reference_id=" +
+      encodeURIComponent(`es${order.es}-en${order.en}_${order.delivery}_${order.state || "na"}_${lang}`);
+    pay.querySelector('[lang="es"]').textContent = T.es.payCard; pay.querySelector('[lang="en"]').textContent = T.en.payCard;
+    $("#card-note").textContent = order.delivery === "envio" ? t.cardNoteShip(sh.r) : t.cardNote;
+  } else {
+    pay.href = wa(orderMessage("wa"));
+    pay.querySelector('[lang="es"]').textContent = T.es.orderWa; pay.querySelector('[lang="en"]').textContent = T.en.orderWa;
+    $("#card-note").textContent = blocked ? t.chooseState : t.waNote;
+  }
+  $("#zelle-form button[type=submit]").disabled = blocked;
+}
+
+function fillStates(sel){
+  const keep = order.state;
+  sel.innerHTML = '<option value="">' + (lang === "es" ? "Elige tu estado" : "Choose your state") + "</option>" +
+    STATES.map(([c, n]) => `<option value="${c}">${n}</option>`).join("");
+  sel.value = keep;
+}
+const STATES = [["AL","Alabama"],["AK","Alaska"],["AZ","Arizona"],["AR","Arkansas"],["CA","California"],["CO","Colorado"],["CT","Connecticut"],["DE","Delaware"],["DC","District of Columbia"],["FL","Florida"],["GA","Georgia"],["HI","Hawaii"],["ID","Idaho"],["IL","Illinois"],["IN","Indiana"],["IA","Iowa"],["KS","Kansas"],["KY","Kentucky"],["LA","Louisiana"],["ME","Maine"],["MD","Maryland"],["MA","Massachusetts"],["MI","Michigan"],["MN","Minnesota"],["MS","Mississippi"],["MO","Missouri"],["MT","Montana"],["NE","Nebraska"],["NV","Nevada"],["NH","New Hampshire"],["NJ","New Jersey"],["NM","New Mexico"],["NY","New York"],["NC","North Carolina"],["ND","North Dakota"],["OH","Ohio"],["OK","Oklahoma"],["OR","Oregon"],["PA","Pennsylvania"],["PR","Puerto Rico"],["RI","Rhode Island"],["SC","South Carolina"],["SD","South Dakota"],["TN","Tennessee"],["TX","Texas"],["UT","Utah"],["VT","Vermont"],["VA","Virginia"],["WA","Washington"],["WV","West Virginia"],["WI","Wisconsin"],["WY","Wyoming"],["GU","Guam"],["VI","U.S. Virgin Islands"],["AS","American Samoa"],["MP","Northern Mariana Islands"],["AA","Armed Forces Americas (AA)"],["AE","Armed Forces Europe (AE)"],["AP","Armed Forces Pacific (AP)"]];
+
+function setLang(l){
+  lang = l;
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l;
+  document.title = l === "es" ? "¿Qué Necesitas Escuchar Hoy? · Mindful Wellness" : "What Do You Need to Hear Today? · Mindful Wellness";
+  $$("[data-set-lang]").forEach(b => b.classList.toggle("on", b.dataset.setLang === l));
+  $$(".state-select").forEach(fillStates);
+  $$('[data-wa="intl"]').forEach(a => a.href = wa(l === "es"
+    ? "Hola Monica 💜 Quiero la cajita \"¿Qué Necesitas Escuchar Hoy?\" con envío a este país: "
+    : "Hi Monica 💜 I'd like the \"What Do You Need to Hear Today?\" box shipped to this country: "));
+  $$('[data-wa="question"]').forEach(a => a.href = wa(l === "es"
+    ? "Hola Monica 💜 Tengo una pregunta sobre la cajita \"¿Qué Necesitas Escuchar Hoy?\":"
+    : "Hi Monica 💜 I have a question about the \"What Do You Need to Hear Today?\" box:"));
+  render();
+}
+
+// events
+$$("[data-set-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.setLang)));
+$$(".qty").forEach(row => row.addEventListener("click", e => {
+  const b = e.target.closest("button[data-d]"); if (!b || b.disabled) return;
+  const v = row.dataset.v, d = +b.dataset.d;
+  order[v] = Math.max(0, order[v] + d);
+  if (qty() === 0) order[v] = 1;
+  if (qty() > CONFIG.maxQty) order[v] -= 1;
+  render();
+}));
+$$(".dopt").forEach(b => b.addEventListener("click", () => { order.delivery = b.dataset.d; render(); }));
+$("#sc-state").addEventListener("change", e => { order.state = e.target.value; render(); });
+$$(".ptab").forEach(b => b.addEventListener("click", () => { order.method = b.dataset.m; render(); }));
+
+// Guarda el pedido para la página de gracias (mismo navegador)
+$("#pay-card").addEventListener("click", e => {
+  if ($("#pay-card").classList.contains("disabled")) { e.preventDefault(); $("#sc-state").focus(); return; }
+  try { sessionStorage.setItem("cajitaOrder", JSON.stringify({ ...order, lang, total: $("#summary .tot b").textContent })); } catch(_) {}
+});
+
+// Zelle: registra en Google Sheets (si está conectado) y abre WhatsApp con Monica
+$("#zelle-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const sh = shipping(); if (order.delivery === "envio" && !sh.ok && sh.reason === "state") { $("#sc-state").focus(); return; }
+  const d = Object.fromEntries(new FormData(e.target));
+  const id = "Z" + Date.now().toString(36).toUpperCase().slice(-6);
+  const q = qty(), p = productTotal(q);
+  const payload = { tipo: "zelle", pedido: id, nombre: d.nombre, telefono: d.telefono, cantidad: q,
+    version: versionsText(), subtotal: money(p), envio: sh.cost != null ? money(sh.cost) : "",
+    total: sh.cost != null ? money(p + sh.cost) : money(p), region: sh.r || "",
+    entrega: order.delivery === "envio" ? "Envío USPS" : order.delivery === "punto" ? "Recoger en un punto" : "Domicilio local",
+    estado: order.state || "", idioma: lang };
+  if (CONFIG.sheetUrl) {
+    try { navigator.sendBeacon(CONFIG.sheetUrl, new Blob([JSON.stringify(payload)], { type: "text/plain" })); } catch(_) {}
+  }
+  location.href = wa(orderMessage("zelle", { id, nombre: d.nombre }));
+});
+
+// Barra de compra en celulares
+const bar = $("#buybar"), hero = $(".hero"), orderSec = $("#ordenar");
+const seen = { hero: true, order: false };
+const upd = () => bar.classList.toggle("show", !seen.hero && !seen.order);
+new IntersectionObserver(es => es.forEach(e => { seen.hero = e.isIntersecting; upd(); })).observe(hero);
+new IntersectionObserver(es => es.forEach(e => { seen.order = e.isIntersecting; upd(); })).observe(orderSec);
+
+// Pétalos cayendo (como el video)
+(function(){
+  const c = document.getElementById("petals"); if (!c || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const x = c.getContext("2d"); let W, H; const P = [];
+  const cols = ["#F4A08F","#F7B9A6","#E98A7C","#E7D3A6","#C9A0D6"];
+  const dpr = devicePixelRatio || 1;
+  function size(){ W = c.width = c.offsetWidth * dpr; H = c.height = c.offsetHeight * dpr; }
+  size(); addEventListener("resize", size);
+  const n = r => ({ x: Math.random() * W, y: r ? Math.random() * H : -20, s: (6 + Math.random() * 9) * dpr, v: (.35 + Math.random() * .7) * dpr,
+    a: Math.random() * 6.28, w: .01 + Math.random() * .02, c: cols[Math.floor(Math.random() * cols.length)], o: .45 + Math.random() * .4 });
+  for (let i = 0; i < 26; i++) P.push(n(true));
+  (function f(){ x.clearRect(0, 0, W, H); P.forEach((p, k) => { p.y += p.v; p.a += p.w; p.x += Math.sin(p.a) * .6 * dpr;
+    x.save(); x.translate(p.x, p.y); x.rotate(p.a); x.globalAlpha = p.o; x.fillStyle = p.c; x.beginPath();
+    x.ellipse(0, 0, p.s, p.s * .45, 0, 0, 6.28); x.fill(); x.restore(); if (p.y > H + 20) P[k] = n(false); }); requestAnimationFrame(f); })();
+})();
+
+$("#yr").textContent = new Date().getFullYear();
+setLang(new URLSearchParams(location.search).get("lang") === "en" ? "en" : "es");
+</script>
+</body>
+</html>

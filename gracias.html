@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Gracias! · ¿Qué Necesitas Escuchar Hoy?</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#4E1A38;--plum:#2A0D21;--cream:#FBF6EF;--gold:#C9A45C;--gold-soft:#E7D3A6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:grid;place-items:center;padding:24px 16px;font-family:"Nunito Sans",system-ui,sans-serif;color:var(--cream);
+  background:radial-gradient(120% 90% at 50% 10%,#6A2A57 0%,#4A1B3D 50%,var(--plum) 100%)}
+.box{max-width:460px;width:100%;text-align:center;border:1px solid rgba(201,164,92,.5);border-radius:24px;padding:34px 24px;background:rgba(255,255,255,.04)}
+.logo{width:120px;margin:0 auto 20px;background:var(--cream);border-radius:16px;padding:10px 12px}
+.cover{width:150px;margin:0 auto 22px;border-radius:10px;border:1px solid rgba(201,164,92,.7);box-shadow:0 16px 36px rgba(0,0,0,.45)}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.4rem;line-height:1.05;margin-bottom:10px}
+h1 em{color:var(--gold-soft);font-weight:500}
+p{color:#EADFE6;margin-bottom:10px;line-height:1.55}
+.ref{display:inline-block;margin:6px 0 18px;padding:6px 14px;border-radius:99px;border:1px solid rgba(201,164,92,.6);color:var(--gold-soft);font-weight:700;letter-spacing:.08em}
+.wa{display:block;background:#25D366;color:#073B1E;font-weight:700;text-decoration:none;padding:16px;border-radius:14px;font-size:1.05rem}
+small{display:block;margin-top:12px;color:#CDBCC6}
+.en{margin-top:4px;font-size:.9rem;color:#CDBCC6}
+</style>
+</head>
+<body>
+<main class="box">
+  <img class="logo" src="assets/logo.png" alt="Mindful Wellness">
+  <img class="cover" src="assets/es-portada.jpg" alt="¿Qué Necesitas Escuchar Hoy?">
+  <h1>¡Gracias! <em>Tu cajita ya es tuya</em></h1>
+  <p>Recibimos tu pago. Te llegará un recibo a tu correo.</p>
+  <p class="en">Payment received — thank you! A receipt is on its way to your email.</p>
+  <div class="ref" id="ref">Pedido</div>
+  <a class="wa" id="wa" href="#">Confirmar mi pedido por WhatsApp</a>
+  <small id="count">Te llevamos a WhatsApp en <b id="n">5</b> s…</small>
+</main>
+<script src="config.js"></script>
+<script>
+const q = new URLSearchParams(location.search);
+const sid = q.get("session_id") || "";
+const ref = sid ? sid.slice(-8).toUpperCase() : "";
+document.getElementById("ref").textContent = ref ? "Pedido / Order #" + ref : "Pedido recibido";
+
+// Registra la compra en Google Sheets al instante (el registro también se sincroniza solo cada 10 min)
+if (CONFIG.sheetUrl && sid) {
+  fetch(CONFIG.sheetUrl + "?action=sync&session_id=" + encodeURIComponent(sid), { mode: "no-cors" }).catch(() => {});
+}
+
+let o = null;
+try { o = JSON.parse(sessionStorage.getItem("cajitaOrder") || "null"); } catch(_) {}
+const dl = { envio: "envío por correo" + (o && o.state ? " a " + o.state : ""), punto: "la recojo en un punto", domicilio: "entrega a domicilio local" };
+const lines = [`Hola Monica 💜 Acabo de pagar con tarjeta mi cajita "¿Qué Necesitas Escuchar Hoy?".` + (ref ? ` Pedido #${ref}.` : "")];
+if (o) {
+  const v = [o.es ? o.es + " en español" : "", o.en ? o.en + " en inglés" : ""].filter(Boolean).join(" + ");
+  lines.push(`• Cajitas: ${v}`, `• Entrega: ${dl[o.delivery] || o.delivery}`, `• Total: ${o.total}`);
+}
+lines.push("Mi nombre es:");
+const msg = lines.join("\n");
+const url = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
+document.getElementById("wa").href = url;
+
+let n = 5;
+const t = setInterval(() => {
+  n--; document.getElementById("n").textContent = n;
+  if (n <= 0) { clearInterval(t); document.getElementById("count").textContent = "¿No se abrió? Toca el botón verde."; location.href = url; }
+}, 1000);
+</script>
+</body>
+</html>
