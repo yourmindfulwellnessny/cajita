@@ -18,7 +18,7 @@ window.CONFIG = {
   //   envio2_3  = envío por correo, 2 a 3 cajitas
   //   envio4_6  = envío por correo, 4 a 6 cajitas
   stripe: {
-    launch:  { local: "https://buy.stripe.com/7sY4gA9R75Sc3Nu9OCenS05", envio1: "https://buy.stripe.com/cNieVe8N36Wg83KaSGenS06", envio2_3: "", envio4_6: "" },
+    launch:  { local: "https://buy.stripe.com/7sY4gA9R75Sc3Nu9OCenS05", envio1: "https://buy.stripe.com/cNieVe8N36Wg83KaSGenS06", envio2_3: "https://buy.stripe.com/fZu8wQbZf2G0es8d0OenS07", envio4_6: "https://buy.stripe.com/3cI5kEbZf5Sc6ZGbWKenS08" },
     regular: { local: "", local2: "", envio1: "", envio2_3: "", envio4_6: "" }
   },
 
