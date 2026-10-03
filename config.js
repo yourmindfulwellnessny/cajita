@@ -3,7 +3,7 @@
    ===================================================== */
 window.CONFIG = {
   // La página cambia SOLA del precio de lanzamiento al regular en esta fecha y hora (hora de NY)
-  launchEnds: "2026-10-04T00:00:00-04:00",   // domingo 4 de octubre
+  launchEnds: "2026-10-05T00:00:00-04:00",   // termina el domingo 4 a medianoche (hora de NY)
 
   // Precio por cajita. "pair" = precio por cada 2 cajitas (si no hay, se usa unit × 2)
   prices: {
