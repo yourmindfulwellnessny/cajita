@@ -22,6 +22,8 @@ p{color:#EADFE6;margin-bottom:10px;line-height:1.55}
 .wa{display:block;background:#25D366;color:#073B1E;font-weight:700;text-decoration:none;padding:16px;border-radius:14px;font-size:1.05rem}
 small{display:block;margin-top:12px;color:#CDBCC6}
 .en{margin-top:4px;font-size:.9rem;color:#CDBCC6}
+.consent{display:flex;gap:10px;align-items:flex-start;text-align:left;margin:0 0 18px;font-size:.88rem;line-height:1.45;color:#EADFE6;cursor:pointer}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:#C9A45C}
 </style>
 </head>
 <body>
@@ -32,8 +34,10 @@ small{display:block;margin-top:12px;color:#CDBCC6}
   <p>Recibimos tu pago. Te llegará un recibo a tu correo.</p>
   <p class="en">Payment received — thank you! A receipt is on its way to your email.</p>
   <div class="ref" id="ref">Pedido</div>
+  <label class="consent"><input type="checkbox" id="acepta" checked>
+    <span>Quiero recibir por correo el <strong>acompañamiento de 31 días</strong> y novedades de Monica. Puedo darme de baja cuando quiera.<br><em>I'd like the 31-day companion emails and news. I can unsubscribe anytime.</em></span></label>
   <a class="wa" id="wa" href="#">Confirmar mi pedido por WhatsApp</a>
-  <small id="count">Te llevamos a WhatsApp en <b id="n">5</b> s…</small>
+  <small id="count">Te llevamos a WhatsApp en <b id="n">8</b> s…</small>
 </main>
 <script src="config.js"></script>
 <script>
@@ -43,9 +47,14 @@ const ref = sid ? sid.slice(-8).toUpperCase() : "";
 document.getElementById("ref").textContent = ref ? "Pedido / Order #" + ref : "Pedido recibido";
 
 // Registra la compra en Google Sheets al instante (el registro también se sincroniza solo cada 10 min)
-if (CONFIG.sheetUrl && sid) {
-  fetch(CONFIG.sheetUrl + "?action=sync&session_id=" + encodeURIComponent(sid), { mode: "no-cors" }).catch(() => {});
+const acepta = document.getElementById("acepta");
+function call(action){
+  if (!CONFIG.sheetUrl || !sid) return;
+  const u = CONFIG.sheetUrl + "?action=" + action + "&session_id=" + encodeURIComponent(sid) + "&acepta=" + (acepta.checked ? "1" : "0");
+  fetch(u, { mode: "no-cors", keepalive: true }).catch(() => {});
 }
+call("sync");
+acepta.addEventListener("change", () => call("consent"));
 
 let o = null;
 try { o = JSON.parse(sessionStorage.getItem("cajitaOrder") || "null"); } catch(_) {}
@@ -60,7 +69,7 @@ const msg = lines.join("\n");
 const url = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
 document.getElementById("wa").href = url;
 
-let n = 5;
+let n = 8;
 const t = setInterval(() => {
   n--; document.getElementById("n").textContent = n;
   if (n <= 0) { clearInterval(t); document.getElementById("count").textContent = "¿No se abrió? Toca el botón verde."; location.href = url; }
