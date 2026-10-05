@@ -3,27 +3,35 @@
    ===================================================== */
 window.CONFIG = {
   // La página cambia SOLA del precio de lanzamiento al regular en esta fecha y hora (hora de NY)
-  launchEnds: "2026-10-05T00:00:00-04:00",   // termina el domingo 4 a medianoche (hora de NY)
+  launchEnds: "2026-10-05T00:00:00-04:00",   // termina el domingo 4 a medianoche (hora de NY) — extendido el 3 oct
 
-  // Precio por cajita. "pair" = precio por cada 2 cajitas (si no hay, se usa unit × 2)
+  // PRECIOS
+  //   launch  = lanzamiento (hasta el domingo 4): $20 c/u (antes $25)
+  //   regular = desde el lunes 5: $25 c/u, y precio especial por paquete de 2 o de 3.
+  //             "bundles" = precio TOTAL del paquete. Para 4 o más se combinan paquetes
+  //             de la forma más barata para la clienta (ej.: 4 = 3 + 1).
   prices: {
-    launch:  { unit: 20, was: 25 },            // lanzamiento: $20 c/u (antes $25)
-    regular: { unit: 25, pair: 45 }            // regular: $25 c/u · 2 por $45
+    launch:  { unit: 20, was: 25 },
+    regular: { unit: 25, bundles: { 2: 45, 3: 65 } }
   },
 
-  // Enlaces de pago de Stripe (Payment Links). La página escoge el correcto según la
-  // cantidad y la forma de entrega. Si un enlace está vacío "", el botón abre WhatsApp.
-  //   local     = recoger en un punto o domicilio local (sin envío), cantidad ajustable
-  //   envio1    = envío por correo, 1 cajita
-  //   envio2_3  = envío por correo, 2 a 3 cajitas
-  //   envio4_6  = envío por correo, 4 a 6 cajitas
+  // ENLACES DE PAGO DE STRIPE (Payment Links)
+  // Si un enlace está vacío "", el botón de tarjeta abre WhatsApp con el pedido escrito.
+  //
+  // launch (no cambia): un solo enlace por grupo, con cantidad ajustable en Stripe.
+  //   local = recoger o domicilio local · envio1 = 1 cajita · envio2_3 = 2–3 · envio4_6 = 4–6
+  //
+  // regular: UN enlace por paquete, con la cantidad FIJA en Stripe (no ajustable).
+  //   local1 / local2 / local3 = 1, 2 o 3 cajitas SIN envío ($25 / $45 / $65)
+  //   envio1 / envio2 / envio3 = 1, 2 o 3 cajitas CON envío USPS (opciones Región A, B, C)
+  //   4 o más cajitas con tarjeta → WhatsApp (o pagan por Zelle desde la página).
   stripe: {
     launch:  { local: "https://buy.stripe.com/7sY4gA9R75Sc3Nu9OCenS05", envio1: "https://buy.stripe.com/cNieVe8N36Wg83KaSGenS06", envio2_3: "https://buy.stripe.com/fZu8wQbZf2G0es8d0OenS07", envio4_6: "https://buy.stripe.com/3cI5kEbZf5Sc6ZGbWKenS08" },
-    regular: { local: "", local2: "", envio1: "", envio2_3: "", envio4_6: "" }
+    regular: { local1: "", local2: "", local3: "", envio1: "", envio2: "", envio3: "" }
   },
 
   // URL de la aplicación web de Google Apps Script (registro de pedidos en Google Sheets).
-  // Termina en /exec. Si está vacía, los pedidos de Zelle no se registran solos.
+  // Termina en /exec. Si está vacía, los pedidos NO se registran solos.
   sheetUrl: "",
 
   // ENVÍO POR CORREO · USPS Ground Advantage desde Wallington, NJ 07057
@@ -45,6 +53,9 @@ window.CONFIG = {
   },
 
   maxQty: 20,
+
+  // Video de lanzamiento (súbelo a la carpeta assets con este nombre). Si no existe, la sección no aparece.
+  video: "assets/lanzamiento.mp4",
 
   // WhatsApp de Mindful Wellness (solo números, con 1 al inicio)
   whatsapp: "12016799969"
