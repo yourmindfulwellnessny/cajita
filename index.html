@@ -7,7 +7,11 @@
 <meta name="description" content="31 tarjetas para 31 días: una frase, una tarea y una reflexión para volver a ti. Primera edición limitada por Monica Villalba.">
 <meta property="og:title" content="¿Qué Necesitas Escuchar Hoy? · Primera edición">
 <meta property="og:description" content="31 tarjetas · 31 días · una frase, una tarea y una reflexión para volver a ti.">
-<meta property="og:image" content="assets/es-portada.jpg">
+<meta property="og:image" content="https://yourmindfulwellnessny.github.io/cajita/assets/es-portada.jpg">
+<meta property="og:url" content="https://yourmindfulwellnessny.github.io/cajita/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.png">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -266,6 +270,16 @@ footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin
 .zcode button{grid-column:2;grid-row:1/3;border:1.5px solid var(--purple);background:#fff;color:var(--purple);border-radius:10px;padding:8px 12px;font:700 .85rem "Nunito Sans";cursor:pointer}
 .zcode small{grid-column:1/-1;font-weight:400;color:var(--muted);font-size:.84rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+[hidden]{display:none!important}
+/* casilla de consentimiento y video */
+.zform .consent{flex-direction:row!important;align-items:flex-start;gap:10px;font-weight:400!important;font-size:.85rem!important;line-height:1.45}
+.zform .consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--purple)}
+.vid{background:var(--plum-ink);color:var(--cream);text-align:center}
+.vid h2{color:var(--cream)}.vid h2 em{color:var(--gold-soft)}
+.vid .kicker{color:var(--gold-soft)}
+.vframe{max-width:340px;margin:22px auto 0;border-radius:22px;overflow:hidden;border:1px solid rgba(201,164,92,.55);box-shadow:0 20px 50px rgba(0,0,0,.45);aspect-ratio:9/16;background:#000}
+.vframe video{width:100%;height:100%;display:block;object-fit:cover}
+.vid .cta{margin-top:24px}
 </style>
 </head>
 <body>
@@ -301,6 +315,19 @@ footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin
       <div class="shot s2"><img class="" lang="es" src="assets/es-portada.jpg" alt="Portada de la cajita ¿Qué Necesitas Escuchar Hoy?" loading="lazy"><img class="" lang="en" src="assets/en-cover.jpg" alt="Box cover What Do You Need to Hear Today?" loading="lazy"></div>
       <div class="shot s3"><img class="" lang="es" src="assets/es-reverso.jpg" alt="Tarjeta, reverso con tarea y reflexión" loading="lazy"><img class="" lang="en" src="assets/en-back.jpg" alt="Card, back with task and reflection" loading="lazy"></div>
     </div>
+  </div>
+</section>
+
+<!-- VIDEO DE LANZAMIENTO (aparece solo si existe assets/lanzamiento.mp4) -->
+<section class="vid" id="video" hidden>
+  <div class="wrap">
+    <div class="kicker"><span lang="es">Míralo en menos de un minuto</span><span lang="en">See it in under a minute</span></div>
+    <h2 lang="es">Así se vive <em>cada mañana</em></h2>
+    <h2 lang="en">This is what <em>every morning</em> feels like</h2>
+    <div class="vframe">
+      <video id="vlaunch" controls playsinline preload="metadata" poster="assets/es-portada.jpg"></video>
+    </div>
+    <a class="cta" href="#ordenar"><span lang="es">Quiero mi cajita</span><span lang="en">I want my box</span> →</a>
   </div>
 </section>
 
@@ -458,6 +485,8 @@ footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin
               <label><span lang="es">Tu nombre</span><span lang="en">Your name</span><input name="nombre" required autocomplete="name"></label>
               <label><span lang="es">Tu WhatsApp</span><span lang="en">Your WhatsApp</span><input name="telefono" type="tel" required autocomplete="tel" inputmode="tel"></label>
             </div>
+            <label><span lang="es">Tu correo electrónico</span><span lang="en">Your email</span><input name="correo" type="email" required autocomplete="email" inputmode="email"></label>
+            <label class="consent"><input type="checkbox" name="acepta" value="1" checked> <span><span lang="es">Quiero recibir por correo el acompañamiento de 31 días y novedades de Monica. Puedo darme de baja cuando quiera.</span><span lang="en">I'd like to receive the 31-day companion emails and news from Monica. I can unsubscribe anytime.</span></span></label>
             <button class="pay wa" type="submit"><span lang="es">Ya pagué · Confirmar por WhatsApp</span><span lang="en">I paid · Confirm on WhatsApp</span></button>
             <p class="note"><span lang="es">Se abre un chat de WhatsApp con Monica (201-679-9969) con tu pedido ya escrito. Solo adjunta la foto del comprobante y envía.</span><span lang="en">A WhatsApp chat with Monica (201-679-9969) opens with your order already written. Just attach your receipt and send.</span></p>
           </form>
@@ -506,6 +535,11 @@ footer .links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin
     <details><summary><span lang="es">¿En qué idiomas está?</span><span lang="en">Which languages are available?</span></summary>
       <p lang="es">En español y en inglés, con el mismo diseño. Elige la versión al ordenar.</p>
       <p lang="en">Spanish and English, same design. Choose your version when you order.</p></details>
+    <details><summary><span lang="es">Cambios, devoluciones y privacidad</span><span lang="en">Exchanges, returns and privacy</span></summary>
+      <p lang="es"><strong>Si tu cajita llega dañada o incompleta,</strong> escríbenos por WhatsApp dentro de los 7 días siguientes con una foto y te enviamos una nueva sin costo. Por ser un producto impreso de edición limitada, no aceptamos devoluciones por cambio de opinión.<br>
+        <strong>Privacidad:</strong> usamos tu nombre, WhatsApp, correo y dirección solo para procesar y entregar tu pedido. Si aceptas, te enviamos el acompañamiento de 31 días y novedades por correo; puedes darte de baja cuando quieras. Nunca vendemos ni compartimos tus datos. Los pagos con tarjeta los procesa Stripe de forma segura; nosotras no vemos ni guardamos los datos de tu tarjeta.</p>
+      <p lang="en"><strong>If your box arrives damaged or incomplete,</strong> message us on WhatsApp within 7 days with a photo and we'll send you a new one at no cost. Because this is a limited-edition printed product, we don't accept returns for change of mind.<br>
+        <strong>Privacy:</strong> we use your name, WhatsApp, email and address only to process and deliver your order. If you opt in, we'll send you the 31-day companion emails and news; you can unsubscribe anytime. We never sell or share your data. Card payments are securely processed by Stripe; we never see or store your card details.</p></details>
     <details><summary><span lang="es">Tengo otra pregunta</span><span lang="en">I have another question</span></summary>
       <p><a data-wa="question" href="#" target="_blank" rel="noopener" style="color:var(--wine);font-weight:700"><span lang="es">Escríbenos por WhatsApp →</span><span lang="en">Message us on WhatsApp →</span></a></p></details>
   </div>
@@ -540,18 +574,29 @@ let lang = "es";
 const order = { es: 1, en: 0, delivery: "envio", state: "", method: "card" };
 const ZID = "Z" + Date.now().toString(36).toUpperCase().slice(-6);
 
+// De dónde viene la clienta (enlaces con ?utm_source=instagram&utm_campaign=…). Se guarda en el pedido.
+const SRC = (() => {
+  const u = new URLSearchParams(location.search);
+  let s = [u.get("utm_source"), u.get("utm_medium"), u.get("utm_campaign")].filter(Boolean).join("-");
+  try { if (s) sessionStorage.setItem("cajitaSrc", s); else s = sessionStorage.getItem("cajitaSrc") || ""; } catch(_) {}
+  if (!s && document.referrer && !document.referrer.includes(location.host)) {
+    try { s = "ref-" + new URL(document.referrer).hostname.replace(/^www\./, ""); } catch(_) {}
+  }
+  return (s || "directo").toLowerCase().replace(/[^a-z0-9-]/g, "-").slice(0, 40);
+})();
+
 const T = {
   es: { box: n => n === 1 ? "1 cajita" : n + " cajitas", es: "Español", en: "Inglés", ship: "Envío USPS", region: "región",
         pickup: "Recoger en un punto", local: "Domicilio local", agreed: "Lo acordamos por WhatsApp",
         chooseState: "Elige tu estado para ver el envío", quote: "Para 7 o más cajitas por correo te cotizamos el envío por WhatsApp",
-        total: "Total", subtotal: "Subtotal", pair: "Lleva 2 por $45", payCard: "Pagar con tarjeta", orderWa: "Ordenar por WhatsApp",
+        total: "Total", subtotal: "Subtotal", payCard: "Pagar con tarjeta", orderWa: "Ordenar por WhatsApp",
         cardNote: "Pago seguro con Stripe. Después del pago te llevamos a WhatsApp para confirmar tu pedido.",
         cardNoteShip: r => "Pago seguro con Stripe. Al pagar, en envío elige «Región " + r + "». Después te llevamos a WhatsApp.",
         waNote: "Se abre WhatsApp con tu pedido ya escrito." },
   en: { box: n => n === 1 ? "1 box" : n + " boxes", es: "Spanish", en: "English", ship: "USPS shipping", region: "region",
         pickup: "Pickup point", local: "Local home delivery", agreed: "We'll agree on WhatsApp",
         chooseState: "Choose your state to see shipping", quote: "For 7+ boxes by mail we'll quote shipping on WhatsApp",
-        total: "Total", subtotal: "Subtotal", pair: "Get 2 for $45", payCard: "Pay by card", orderWa: "Order on WhatsApp",
+        total: "Total", subtotal: "Subtotal", payCard: "Pay by card", orderWa: "Order on WhatsApp",
         cardNote: "Secure checkout with Stripe. After paying, we'll take you to WhatsApp to confirm your order.",
         cardNoteShip: r => "Secure checkout with Stripe. At checkout, choose shipping «Region " + r + "». Then we'll take you to WhatsApp.",
         waNote: "WhatsApp opens with your order already written." }
@@ -559,9 +604,21 @@ const T = {
 
 function wa(text){ return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text); }
 const qty = () => order.es + order.en;
+// Precio más bajo combinando paquetes (1 cajita, 2 por $X, 3 por $Y…)
 function productTotal(q){
-  if (PR.pair) return Math.floor(q / 2) * PR.pair + (q % 2) * PR.unit;
-  return q * PR.unit;
+  const B = Object.assign({ 1: PR.unit }, PR.bundles || {});
+  if (PR.pair && !B[2]) B[2] = PR.pair;
+  const best = [0];
+  for (let n = 1; n <= q; n++) {
+    best[n] = Infinity;
+    for (const k in B) { const m = +k; if (m <= n) best[n] = Math.min(best[n], best[n - m] + B[k]); }
+  }
+  return best[q];
+}
+function bundleText(){
+  const B = PR.bundles || {}, ks = Object.keys(B).map(Number).sort((a, b) => a - b);
+  if (!ks.length) return "";
+  return ks.map(k => lang === "es" ? `${k} por ${money(B[k])}` : `${k} for ${money(B[k])}`).join(" · ");
 }
 const regionOf = st => Object.keys(SH.regions).find(r => SH.regions[r].includes(st)) || null;
 function shipping(){
@@ -573,11 +630,15 @@ function shipping(){
   return { cost: tier.rates[r], ok: true, r };
 }
 function stripeLink(){
-  const q = qty();
-  if (order.delivery !== "envio") return (!LAUNCH && q >= 2 && LINKS.local2) ? LINKS.local2 : LINKS.local;
-  if (q === 1) return LINKS.envio1;
-  if (q <= 3) return LINKS.envio2_3;
-  if (q <= 6) return LINKS.envio4_6;
+  const q = qty(), ship = order.delivery === "envio";
+  if (!LAUNCH) {                      // regular: un enlace por paquete (cantidad fija en Stripe)
+    if (q > 3) return "";
+    return LINKS[(ship ? "envio" : "local") + q] || "";
+  }
+  if (!ship) return LINKS.local || "";
+  if (q === 1) return LINKS.envio1 || "";
+  if (q <= 3) return LINKS.envio2_3 || "";
+  if (q <= 6) return LINKS.envio4_6 || "";
   return "";
 }
 function versionsText(){
@@ -602,6 +663,7 @@ function orderMessage(kind, extra){
     ? [`• ${T.es.box(q)}: ${versionsText()} · ${money(p)}`, `• Entrega: ${deliveryText(sh)}`, `• Total: ${tot}`]
     : [`• ${T.en.box(q)}: ${versionsText()} · ${money(p)}`, `• Delivery: ${deliveryText(sh)}`, `• Total: ${tot}`];
   if (extra && extra.nombre) L.push((lang === "es" ? "• Nombre: " : "• Name: ") + extra.nombre);
+  if (extra && extra.correo) L.push((lang === "es" ? "• Correo: " : "• Email: ") + extra.correo);
   const tail = kind === "zelle" ? (lang === "es" ? "Te adjunto el comprobante 👇" : "Here is my receipt 👇")
                                 : (lang === "es" ? "Mi nombre es:" : "My name is:");
   return [head, ...L, tail].join("\n");
@@ -613,7 +675,8 @@ function render(){
   $("#unit-now").textContent = money(PR.unit);
   $("#unit-was").textContent = PR.was ? money(PR.was) : "";
   $$(".launch").forEach(el => el.style.display = LAUNCH ? "" : "none");
-  $("#pair-note").textContent = (lang === "es" ? "por cajita" : "per box") + (PR.pair ? " · " + t.pair : "");
+  const bt = bundleText();
+  $("#pair-note").textContent = (lang === "es" ? "por cajita" : "per box") + (bt ? " · " + (lang === "es" ? "Paquetes: " : "Bundles: ") + bt : "");
   $("#bar-price").textContent = money(PR.unit);
   // steppers
   $$(".qty").forEach(row => {
@@ -644,7 +707,7 @@ function render(){
   pay.classList.toggle("disabled", blocked);
   if (link && sh.ok) {
     pay.href = link + (link.includes("?") ? "&" : "?") + "client_reference_id=" +
-      encodeURIComponent(`es${order.es}-en${order.en}_${order.delivery}_${order.state || "na"}_${lang}`);
+      encodeURIComponent(`es${order.es}-en${order.en}_${order.delivery}_${order.state || "na"}_${lang}_${SRC}`);
     pay.querySelector('[lang="es"]').textContent = T.es.payCard; pay.querySelector('[lang="en"]').textContent = T.en.payCard;
     $("#card-note").textContent = order.delivery === "envio" ? t.cardNoteShip(sh.r) : t.cardNote;
   } else {
@@ -696,7 +759,11 @@ $$(".ptab").forEach(b => b.addEventListener("click", () => { order.method = b.da
 // Guarda el pedido para la página de gracias (mismo navegador)
 $("#pay-card").addEventListener("click", e => {
   if ($("#pay-card").classList.contains("disabled")) { e.preventDefault(); $("#sc-state").focus(); return; }
-  try { sessionStorage.setItem("cajitaOrder", JSON.stringify({ ...order, lang, total: $("#summary .tot b").textContent })); } catch(_) {}
+  try { sessionStorage.setItem("cajitaOrder", JSON.stringify({ ...order, lang, src: SRC, total: $("#summary .tot b").textContent })); } catch(_) {}
+  if (CONFIG.sheetUrl) {   // deja constancia de que inició el pago con tarjeta (Stripe confirma después)
+    try { navigator.sendBeacon(CONFIG.sheetUrl, new Blob([JSON.stringify({ tipo: "tarjeta_inicio", ref: `es${order.es}-en${order.en}_${order.delivery}_${order.state || "na"}_${lang}_${SRC}`,
+      cantidad: qty(), espanol: order.es, ingles: order.en, total: $("#summary .tot b").textContent, origen: SRC, idioma: lang })], { type: "text/plain" })); } catch(_) {}
+  }
 });
 
 // Zelle: registra en Google Sheets (si está conectado) y abre WhatsApp con Monica
@@ -706,15 +773,18 @@ $("#zelle-form").addEventListener("submit", e => {
   const d = Object.fromEntries(new FormData(e.target));
   const id = ZID;
   const q = qty(), p = productTotal(q);
-  const payload = { tipo: "zelle", pedido: id, nombre: d.nombre, telefono: d.telefono, cantidad: q,
+  const payload = { tipo: "zelle", pedido: id, nombre: d.nombre, correo: (d.correo || "").trim(), acepta_correos: d.acepta ? "Sí" : "No",
+    telefono: d.telefono, cantidad: q, espanol: order.es, ingles: order.en, origen: SRC,
     version: versionsText(), subtotal: money(p), envio: sh.cost != null ? money(sh.cost) : "",
     total: sh.cost != null ? money(p + sh.cost) : money(p), region: sh.r || "",
     entrega: order.delivery === "envio" ? "Envío USPS" : order.delivery === "punto" ? "Recoger en un punto" : "Domicilio local",
-    estado: order.state || "", idioma: lang };
+    estado: order.delivery === "envio" ? (order.state || "") : "", idioma: lang };
   if (CONFIG.sheetUrl) {
     try { navigator.sendBeacon(CONFIG.sheetUrl, new Blob([JSON.stringify(payload)], { type: "text/plain" })); } catch(_) {}
   }
-  location.href = wa(orderMessage("zelle", { id, nombre: d.nombre }));
+  // pequeña pausa para que el registro salga antes de abrir WhatsApp
+  const go = () => { location.href = wa(orderMessage("zelle", { id, nombre: d.nombre, correo: payload.correo })); };
+  setTimeout(go, 350);
 });
 
 // Barra de compra en celulares
@@ -747,6 +817,15 @@ $("#z-copy").addEventListener("click", () => {
   try { navigator.clipboard.writeText(ZID).then(done, done); } catch(_) { done(); }
 });
 $("#yr").textContent = new Date().getFullYear();
+
+// Video: se muestra solo si el archivo existe
+(function(){
+  const v = $("#vlaunch"), sec = $("#video");
+  if (!v || !CONFIG.video) return;
+  v.addEventListener("loadedmetadata", () => { sec.hidden = false; }, { once: true });
+  v.addEventListener("error", () => { sec.hidden = true; }, { once: true });
+  v.src = CONFIG.video;
+})();
 setLang(new URLSearchParams(location.search).get("lang") === "en" ? "en" : "es");
 </script>
 </body>
