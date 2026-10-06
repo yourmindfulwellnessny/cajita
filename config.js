@@ -27,7 +27,14 @@ window.CONFIG = {
   //   4 o más cajitas con tarjeta → WhatsApp (o pagan por Zelle desde la página).
   stripe: {
     launch:  { local: "https://buy.stripe.com/7sY4gA9R75Sc3Nu9OCenS05", envio1: "https://buy.stripe.com/cNieVe8N36Wg83KaSGenS06", envio2_3: "https://buy.stripe.com/fZu8wQbZf2G0es8d0OenS07", envio4_6: "https://buy.stripe.com/3cI5kEbZf5Sc6ZGbWKenS08" },
-    regular: { local1: "", local2: "", local3: "", envio1: "", envio2: "", envio3: "" }
+    regular: {
+      local1: "https://buy.stripe.com/9B6dRabZf3K45VC3qeenS09",   // 1 cajita $25
+      local2: "https://buy.stripe.com/4gM5kE4wNcgAabS1i6enS0a",   // paquete 2 $45
+      local3: "https://buy.stripe.com/eVqfZi3sJeoI4Ry2maenS0h",   // paquete 3 $65
+      envio1: "https://buy.stripe.com/5kQ6oI3sJ94o2Jq4uienS0c",   // 1 cajita + envío (A/B/C)
+      envio2: "https://buy.stripe.com/fZudRabZf80k1Fm5ymenS0d",   // paquete 2 + envío 2–3
+      envio3: "https://buy.stripe.com/dRm3cwd3jeoI5VCaSGenS0i"    // paquete 3 + envío 2–3
+    }
   },
 
   // URL de la aplicación web de Google Apps Script (registro de pedidos en Google Sheets).
