@@ -39,7 +39,7 @@ window.CONFIG = {
 
   // URL de la aplicación web de Google Apps Script (registro de pedidos en Google Sheets).
   // Termina en /exec. Si está vacía, los pedidos NO se registran solos.
-  sheetUrl: "",
+  sheetUrl: "https://script.google.com/macros/s/AKfycbyRBl0_fz_7WdWtjpDeXrqeZFYmuDEYilPMysHo2WOWsNrMFa40Kll3XDrNHQsDsI-XkQ/exec",
 
   // ENVÍO POR CORREO · USPS Ground Advantage desde Wallington, NJ 07057
   // Tarifas oficiales USPS al público (vigentes desde el 12 jul 2026) + recargo temporal
