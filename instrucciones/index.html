@@ -10,7 +10,7 @@
 <link rel="icon" href="../assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --wine:#4E1A38; --wine-2:#6B2A4E; --plum-ink:#2E0F22;
@@ -31,11 +31,15 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 
 /* ---------- barra superior ---------- */
 .top{position:sticky;top:0;z-index:30;background:rgba(78,26,56,.97);backdrop-filter:blur(8px);color:var(--cream)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.top .wrap{display:grid;grid-template-columns:92px minmax(0,1fr) 92px;align-items:center;height:56px;gap:8px}
+.top .brand{grid-column:2;text-align:center;min-width:0}
+.top .lang{grid-column:3;justify-self:end}
 .brand{font-family:var(--serif);font-size:1.12rem;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lang{display:flex;border:1px solid rgba(231,211,166,.5);border-radius:999px;overflow:hidden;flex-shrink:0}
 .lang button{background:none;border:0;color:var(--gold-soft);font-weight:700;font-size:.8rem;padding:7px 13px;cursor:pointer}
 .lang button.on{background:var(--gold);color:var(--plum-ink)}
+@media (max-width:440px){.top .wrap{grid-template-columns:68px minmax(0,1fr) 68px;gap:6px}.brand{font-size:.95rem}.lang button{padding:6px 10px;font-size:.72rem}}
+.hero h1,h2{text-wrap:balance}
 
 /* ---------- encabezado ---------- */
 .hero{background:radial-gradient(120% 90% at 50% 10%,#6A2A57 0%,#4A1B3D 50%,#2A0D21 100%);color:var(--cream);position:relative;overflow:hidden;padding:40px 0 48px;text-align:center}
@@ -55,6 +59,9 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 section.block{padding:52px 0}
 section.block.alt{background:var(--lilac)}
 .kicker{text-align:center;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:var(--wine-2);margin-bottom:6px}
+.kicker.pill{margin-bottom:16px}
+.kicker.pill span{display:inline-block;background:var(--gold);color:var(--plum-ink);border-radius:999px;padding:10px 24px;font-size:.78rem;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+h2.solid em.strong{font-weight:700}
 h2{font-family:var(--serif);font-weight:600;color:var(--wine);text-align:center;font-size:clamp(2rem,8vw,2.7rem);line-height:1.06;margin-bottom:10px}
 h2 em{color:var(--gold);font-weight:500}
 h2.solid em{color:var(--wine)}
@@ -195,7 +202,7 @@ footer small{font-size:.82rem;opacity:.85}
   <div class="wrap">
     <img class="logo-badge" src="../assets/logo.png" alt="Mindful Wellness">
     <h1 lang="es">Bienvenida a<br><em>tu cajita</em></h1>
-    <h1 lang="en">Welcome to<br><em>your box</em></h1>
+    <h1 lang="en">Welcome to<br><em>your box of wellness</em></h1>
     <p class="lead" lang="es">31 días, 31 mensajes, 31 pequeños momentos para volver a ti. Así de fácil:</p>
     <p class="lead" lang="en">31 days, 31 messages, 31 small moments to come back to yourself. It's this easy:</p>
     <div class="quick">
@@ -313,14 +320,14 @@ footer small{font-size:.82rem;opacity:.85}
         <span class="pd" lang="es">Ver con claridad la vida que quieres construir.</span><span class="pd" lang="en">Seeing clearly the life you want to build.</span></button>
     </div>
     <p class="note" lang="es">💡 <strong>Truco:</strong> busca la palabra pequeña debajo de la frase, en el frente de tu tarjeta. Ese es tu camino de hoy.</p>
-    <p class="note" lang="en">💡 <strong>Tip:</strong> look for the small word under the phrase on the front of your card. That's today's path.</p>
+    <p class="note" lang="en">💡 <strong>A little secret:</strong> look for the small word under the phrase on the front of your card. That's today's path.</p>
   </div>
 </section>
 
 <!-- PROGRESO -->
 <section class="block alt" id="progreso">
   <div class="wrap">
-    <div class="kicker"><span lang="es">Tu camino</span><span lang="en">Your journey</span></div>
+    <div class="kicker pill"><span lang="es">Tu camino</span><span lang="en">Your journey</span></div>
     <h2 lang="es">Mis <em>31 días</em></h2>
     <h2 lang="en">My <em>31 days</em></h2>
     <p class="sub" lang="es">Cada día que uses tu tarjeta, toca su número para marcarlo.</p>
@@ -351,7 +358,7 @@ footer small{font-size:.82rem;opacity:.85}
         <p lang="es">No pasa nada. Retoma al día siguiente con la tarjeta que sigue, sin culpa. No tiene que ser perfecto.</p>
         <p lang="en">That's okay. Pick up the next day with the next card, no guilt. It doesn't have to be perfect.</p></details>
       <details><summary><span lang="es">¿Qué hago con la pregunta de reflexión?</span><span lang="en">What do I do with the reflection question?</span></summary>
-        <p lang="es">Lo que te salga natural: escríbela en tu planner, piénsala con tu café o llévala contigo durante el día.</p>
+        <p lang="es">Lo que te salga natural: escríbela en tu agenda, piénsala con tu café o llévala contigo durante el día.</p>
         <p lang="en">Whatever feels natural: write it in your planner, think about it over coffee, or carry it with you through the day.</p></details>
       <details><summary><span lang="es">¿Cuánto tiempo me toma?</span><span lang="en">How long does it take?</span></summary>
         <p lang="es">Unos 5 minutos en la mañana. La tarea del día la haces cuando puedas durante tu día.</p>
@@ -364,12 +371,12 @@ footer small{font-size:.82rem;opacity:.85}
 <section class="block alt" id="planner">
   <div class="wrap">
     <div class="planner">
-      <h2 lang="es">Planner <em>31 Días de Crecimiento</em></h2>
-      <h2 lang="en"><em>31 Days of Growth</em> Planner</h2>
-      <p lang="es">Acompaña tus tarjetas con tu planner: un espacio para anotar tus tareas, tus respuestas y lo que vas descubriendo de ti.</p>
+      <h2 lang="es"><em>31 Días de Crecimiento</em><br>Mi Agenda</h2>
+      <h2 lang="en"><em>31 Days of Growth</em><br>Planner</h2>
+      <p lang="es">Acompaña tus tarjetas con tu agenda: un espacio para anotar tus tareas, tus respuestas y lo que vas descubriendo de ti.</p>
       <p lang="en">Pair your cards with your planner: a space to note your tasks, your answers, and what you discover about yourself.</p>
       <!-- PEGAR AQUÍ ENLACE DEL PLANNER -->
-      <a class="cta" href="#" target="_blank" rel="noopener"><span lang="es">Abrir mi planner</span><span lang="en">Open my planner</span> →</a>
+      <a class="cta" href="#" target="_blank" rel="noopener"><span lang="es">Abrir mi agenda</span><span lang="en">Open my planner</span> →</a>
     </div>
   </div>
 </section>
@@ -377,9 +384,9 @@ footer small{font-size:.82rem;opacity:.85}
 <!-- CONTACTO -->
 <section class="block" id="contacto">
   <div class="wrap">
-    <div class="kicker"><span lang="es">Seguimos en contacto</span><span lang="en">Let's stay in touch</span></div>
-    <h2 lang="es" class="solid">Sígueme y <em>contáctame</em></h2>
-    <h2 lang="en" class="solid">Follow me and <em>reach out</em></h2>
+    <div class="kicker pill"><span lang="es">Seguimos en contacto</span><span lang="en">Let's stay in touch</span></div>
+    <h2 lang="es" class="solid">Sígueme y <em class="strong">contáctame</em></h2>
+    <h2 lang="en" class="solid"><em>Follow me and stay connected</em></h2>
     <p class="sub" lang="es">Si tienes preguntas o quieres contarme cómo te va, escríbeme.</p>
     <p class="sub" lang="en">If you have questions or want to tell me how it's going, write to me.</p>
 
@@ -403,7 +410,7 @@ footer small{font-size:.82rem;opacity:.85}
       <div class="name" lang="es">Mónica Villalba</div>
       <div class="name" lang="en">Monica Villalba</div>
       <div class="role" lang="es">Coach de Salud y Bienestar certificada en EE.&nbsp;UU.<br>Mindful Wellness &amp; Coaching</div>
-      <div class="role" lang="en">U.S.-Certified Health &amp; Wellness Coach<br>Mindful Wellness &amp; Coaching</div>
+      <div class="role" lang="en">U.S. Certified Health &amp; Wellness Coach<br>Mindful Wellness &amp; Coaching</div>
       <p lang="es">Por más de 25 años he acompañado a mujeres en su bienestar, su crecimiento y sus metas.</p>
       <p lang="en">For over 25 years I've walked alongside women in their well-being, growth and goals.</p>
     </div>
@@ -445,7 +452,7 @@ footer small{font-size:.82rem;opacity:.85}
       es:{side:"Reverso · Tarea del día", t:"2 · Haz", p:"Dale la vuelta. Arriba está la tarea del día: algo concreto y sencillo para hacer hoy.", tip:"Hazla cuando puedas durante tu día"},
       en:{side:"Back · Today's task", t:"2 · Do", p:"Flip it over. At the top is today's task: something simple and concrete to do today.", tip:"Do it whenever you can during your day"} },
     { flip:true, hl:{top:"52.5%",height:"19%"},
-      es:{side:"Reverso · Reflexiona", t:"3 · Reflexiona", p:"Debajo hay una pregunta para escucharte. Escríbela, piénsala o llévala contigo.", tip:"Tu planner es el lugar ideal para anotarla"},
+      es:{side:"Reverso · Reflexiona", t:"3 · Reflexiona", p:"Debajo hay una pregunta para escucharte. Escríbela, piénsala o llévala contigo.", tip:"Tu agenda es el lugar ideal para anotarla"},
       en:{side:"Back · Reflect", t:"3 · Reflect", p:"Below is a question to listen to yourself. Write it down, think about it, or carry it with you.", tip:"Your planner is the perfect place to write it"} }
   ];
   var step = 0, card = $("#card"), hlF = $("#hlFront"), hlB = $("#hlBack");
@@ -534,7 +541,7 @@ footer small{font-size:.82rem;opacity:.85}
   }
 
   /* ---- idioma ---- */
-  var titles = {es:"Bienvenida a tu cajita · Mindful Wellness", en:"Welcome to your box · Mindful Wellness"};
+  var titles = {es:"Bienvenida a tu cajita · Mindful Wellness", en:"Welcome to your box of wellness · Mindful Wellness"};
   function setLang(l){
     lang = l;
     document.documentElement.dataset.lang = l;
