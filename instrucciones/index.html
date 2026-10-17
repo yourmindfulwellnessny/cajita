@@ -47,7 +47,10 @@ html[data-lang="en"] [lang="es"]{display:none!important}
 .logo-badge{width:170px;margin:0 auto 22px}
 .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,11vw,4.2rem);line-height:1;margin-bottom:14px}
 .hero h1 em{color:var(--gold-soft);font-weight:500}
-.hero p.lead{max-width:460px;margin:0 auto 24px;font-size:1.05rem;color:#F1E5EC}
+.hero p.lead{max-width:460px;margin:0 auto 22px;font-size:1.05rem;color:#F1E5EC;text-wrap:balance}
+.hero .l1,.hero .l2,.hero .l3{display:block}
+.hero .l2{font-family:var(--serif);font-style:italic;font-size:1.55rem;color:var(--gold-soft);line-height:1.2;margin-top:4px}
+.hero .l3{margin-top:14px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--gold-soft);opacity:.9}
 .quick{display:flex;justify-content:center;gap:8px;margin-bottom:26px;flex-wrap:wrap}
 .quick span{display:inline-flex;align-items:center;gap:8px;background:rgba(251,246,239,.08);border:1px solid rgba(231,211,166,.35);color:var(--cream);padding:7px 14px 7px 7px;border-radius:999px;font-size:.88rem;font-weight:600}
 .quick b{width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--plum-ink);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem}
@@ -66,6 +69,7 @@ h2{font-family:var(--serif);font-weight:600;color:var(--wine);text-align:center;
 h2 em{color:var(--gold);font-weight:500}
 h2.solid em{color:var(--wine)}
 .sub{text-align:center;color:var(--muted);max-width:480px;margin:0 auto 26px}
+.sub .enfasis{font-weight:800;color:var(--wine);text-transform:uppercase;letter-spacing:.06em;font-size:.95em}
 
 /* ---------- guía interactiva ---------- */
 .bookend{display:flex;gap:12px;align-items:center;background:#fff;border:1px dashed var(--gold-soft);border-radius:16px;padding:12px 16px;max-width:520px;margin:0 auto;color:var(--muted);font-size:.94rem}
@@ -203,8 +207,8 @@ footer small{font-size:.82rem;opacity:.85}
     <img class="logo-badge" src="../assets/logo-light.png" alt="Mindful Wellness">
     <h1 lang="es">Bienvenida a<br><em>tu cajita</em></h1>
     <h1 lang="en">Welcome to<br><em>your box of wellness</em></h1>
-    <p class="lead" lang="es">31 días, 31 mensajes, 31 pequeños momentos para volver a ti. Así de fácil:</p>
-    <p class="lead" lang="en">31 days, 31 messages, 31 small moments to come back to yourself. It's this easy:</p>
+    <p class="lead" lang="es"><span class="l1">31 días · 31 mensajes · 31 pequeños momentos</span><span class="l2">para volver a ti</span><span class="l3">Así de fácil</span></p>
+    <p class="lead" lang="en"><span class="l1">31 days · 31 messages · 31 small moments</span><span class="l2">to come back to yourself</span><span class="l3">It's this easy</span></p>
     <div class="quick">
       <span><b>1</b><em lang="es" style="font-style:normal">Lee</em><em lang="en" style="font-style:normal">Read</em></span>
       <span><b>2</b><em lang="es" style="font-style:normal">Haz</em><em lang="en" style="font-style:normal">Do</em></span>
@@ -277,8 +281,8 @@ footer small{font-size:.82rem;opacity:.85}
     <div class="kicker"><span lang="es">Un mensaje para ti</span><span lang="en">A message for you</span></div>
     <h2 lang="es">Míralo en <em>un minuto</em></h2>
     <h2 lang="en">See it in <em>one minute</em></h2>
-    <p class="sub" lang="es">Dale play a este video corto antes de sacar tu primera tarjeta.</p>
-    <p class="sub" lang="en">Press play on this short video before you pull your first card.</p>
+    <p class="sub" lang="es">Dale play a este video corto <span class="enfasis">antes</span> de sacar tu primera tarjeta.</p>
+    <p class="sub" lang="en">Press play on this short video <span class="enfasis">before</span> you pull your first card.</p>
     <div class="video-card">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeQDVu_uoOo/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;margin:0 auto;max-width:540px;min-width:0;padding:0;width:100%;">
         <a href="https://www.instagram.com/reel/DeQDVu_uoOo/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener" style="display:block;padding:40px 16px;text-align:center;color:#6B2A4E;font-weight:700;text-decoration:none;">
