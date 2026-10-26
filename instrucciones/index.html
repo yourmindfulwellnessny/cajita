@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" data-lang="es">
+<html lang="es" data-lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bienvenida a tu cajita · Mindful Wellness</title>
-<meta name="description" content="Cómo usar tu cajita ¿Qué Necesitas Escuchar Hoy? · Mindful Wellness & Coaching LLC">
+<title>Así funciona tu cajita · Mindful Wellness</title>
+<meta name="description" content="Así funciona tu cajita ¿Qué Necesitas Escuchar Hoy? · Mindful Wellness &amp; Coaching LLC">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#4E1A38">
 <link rel="icon" href="../assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600;1,700&family=Nunito+Sans:wght@400;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --wine:#4E1A38; --wine-2:#6B2A4E; --plum-ink:#2E0F22;
@@ -19,70 +19,87 @@
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:"Nunito Sans",system-ui,sans-serif;
 }
+html[data-lang="ar"]{--serif:"Amiri","Times New Roman",serif;--sans:"Tajawal",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 img{max-width:100%;display:block}
 a{color:inherit}
 button{font-family:inherit}
-.wrap{max-width:720px;margin:0 auto;padding:0 18px}
-html[data-lang="es"] [lang="en"]{display:none!important}
-html[data-lang="en"] [lang="es"]{display:none!important}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+/* ---------- idiomas ---------- */
+html[data-lang="es"] [lang="en"],html[data-lang="es"] [lang="ar"]{display:none!important}
+html[data-lang="en"] [lang="es"],html[data-lang="en"] [lang="ar"]{display:none!important}
+html[data-lang="ar"] [lang="es"],html[data-lang="ar"] [lang="en"]{display:none!important}
+html[data-lang="ar"] .face img[lang="en"]{display:block!important}  /* tarjetas en inglés para la versión árabe */
+/* el árabe no lleva cursiva ni espaciado entre letras (rompe la escritura) */
+html[data-lang="ar"] *{letter-spacing:0!important}
+html[data-lang="ar"] em,html[data-lang="ar"] .brand,html[data-lang="ar"] .hero .l2,html[data-lang="ar"] footer .quote{font-style:normal!important}
+html[data-lang="ar"] body{line-height:1.75}
+html[dir="rtl"] .flip-x{display:inline-block;transform:scaleX(-1)}
 
 /* ---------- barra superior ---------- */
 .top{position:sticky;top:0;z-index:30;background:rgba(78,26,56,.97);backdrop-filter:blur(8px);color:var(--cream)}
-.top .wrap{display:grid;grid-template-columns:92px minmax(0,1fr) 92px;align-items:center;height:56px;gap:8px}
-.top .brand{grid-column:2;text-align:center;min-width:0}
-.top .lang{grid-column:3;justify-self:end}
-.brand{font-family:var(--serif);font-size:1.12rem;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;gap:10px}
+.brand{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.1rem;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .lang{display:flex;border:1px solid rgba(231,211,166,.5);border-radius:999px;overflow:hidden;flex-shrink:0}
-.lang button{background:none;border:0;color:var(--gold-soft);font-weight:700;font-size:.8rem;padding:7px 13px;cursor:pointer}
+.lang button{background:none;border:0;color:var(--gold-soft);font-weight:700;font-size:.78rem;padding:7px 12px;cursor:pointer;font-family:"Nunito Sans",system-ui,sans-serif}
+.lang button[data-set-lang="ar"]{font-family:"Tajawal",system-ui,sans-serif;font-size:.86rem;padding-top:5px;padding-bottom:6px}
 .lang button.on{background:var(--gold);color:var(--plum-ink)}
-@media (max-width:440px){.top .wrap{grid-template-columns:68px minmax(0,1fr) 68px;gap:6px}.brand{font-size:.95rem}.lang button{padding:6px 10px;font-size:.72rem}}
+@media (max-width:400px){.brand{font-size:.95rem}.lang button{padding:6px 9px;font-size:.72rem}}
 .hero h1,h2{text-wrap:balance}
 
 /* ---------- encabezado ---------- */
-.hero{background:radial-gradient(120% 90% at 50% 10%,#6A2A57 0%,#4A1B3D 50%,#2A0D21 100%);color:var(--cream);position:relative;overflow:hidden;padding:40px 0 48px;text-align:center}
-.hero::before{content:"";position:absolute;inset:14px;border:1px solid rgba(201,164,92,.45);border-radius:22px;pointer-events:none}
-.logo-badge{width:170px;margin:0 auto 22px}
-.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,11vw,4.2rem);line-height:1;margin-bottom:14px}
+.hero{background:radial-gradient(120% 90% at 50% 10%,#6A2A57 0%,#4A1B3D 50%,#2A0D21 100%);color:var(--cream);position:relative;overflow:hidden;padding:30px 0 34px;text-align:center}
+.hero::before{content:"";position:absolute;inset:12px;border:1px solid rgba(201,164,92,.45);border-radius:22px;pointer-events:none}
+.logo-badge{width:132px;margin:0 auto 14px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,10vw,3.8rem);line-height:1.02;margin-bottom:10px}
 .hero h1 em{color:var(--gold-soft);font-weight:500}
-.hero p.lead{max-width:460px;margin:0 auto 22px;font-size:1.05rem;color:#F1E5EC;text-wrap:balance}
-.hero .l1,.hero .l2,.hero .l3{display:block}
-.hero .l2{font-family:var(--serif);font-style:italic;font-size:1.55rem;color:var(--gold-soft);line-height:1.2;margin-top:4px}
-.hero .l3{margin-top:14px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--gold-soft);opacity:.9}
-.quick{display:flex;justify-content:center;gap:8px;margin-bottom:26px;flex-wrap:wrap}
-.quick span{display:inline-flex;align-items:center;gap:8px;background:rgba(251,246,239,.08);border:1px solid rgba(231,211,166,.35);color:var(--cream);padding:7px 14px 7px 7px;border-radius:999px;font-size:.88rem;font-weight:600}
+html[data-lang="ar"] .hero h1{line-height:1.35;font-size:clamp(2.2rem,9vw,3.4rem)}
+.hero p.lead{max-width:460px;margin:0 auto 16px;font-size:1rem;color:#F1E5EC;text-wrap:balance}
+.hero .l1,.hero .l2{display:block}
+.hero .l2{font-family:var(--serif);font-style:italic;font-size:1.45rem;color:var(--gold-soft);line-height:1.25;margin-top:2px}
+.quick{display:flex;justify-content:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.quick span{display:inline-flex;align-items:center;gap:8px;background:rgba(251,246,239,.08);border:1px solid rgba(231,211,166,.35);color:var(--cream);padding:6px 14px 6px 6px;border-radius:999px;font-size:.88rem;font-weight:600}
+html[dir="rtl"] .quick span{padding:6px 6px 6px 14px}
 .quick b{width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--plum-ink);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem}
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--plum-ink);font-weight:800;font-size:1.02rem;text-decoration:none;padding:15px 30px;border-radius:999px;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .15s}
-.cta:hover{transform:translateY(-2px)}
-.hero small{display:block;margin-top:12px;color:var(--gold-soft);font-size:.84rem}
+.hero small{display:block;color:var(--gold-soft);font-size:.84rem;margin-bottom:22px}
+
+/* Paso 1: síguenos (dentro del encabezado) */
+.follow{position:relative;background:rgba(251,246,239,.07);border:1px solid rgba(231,211,166,.4);border-radius:20px;padding:16px 14px 14px;max-width:460px;margin:0 auto}
+.step-tag{display:inline-block;background:var(--gold);color:var(--plum-ink);font-weight:800;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:5px 14px;margin-bottom:8px}
+.follow h2{color:var(--cream);font-size:1.75rem;margin-bottom:4px}
+.follow h2 em{color:var(--gold-soft)}
+.follow p{color:#F1E5EC;font-size:.92rem;margin:0 auto 12px;max-width:360px}
+.soc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.soc a{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;background:var(--cream);color:var(--wine);border-radius:14px;padding:10px 4px 9px;font-weight:800;font-size:.8rem;transition:transform .15s}
+.soc a:hover{transform:translateY(-2px)}
+.soc a.ig{background:var(--gold);color:var(--plum-ink)}
+.soc svg{width:22px;height:22px}
 
 /* ---------- secciones ---------- */
-section.block{padding:52px 0}
+section.block{padding:42px 0}
 section.block.alt{background:var(--lilac)}
 .kicker{text-align:center;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:var(--wine-2);margin-bottom:6px}
-.kicker.pill{margin-bottom:16px}
-.kicker.pill span{display:inline-block;background:var(--gold);color:var(--plum-ink);border-radius:999px;padding:10px 24px;font-size:.78rem;box-shadow:0 8px 22px rgba(0,0,0,.18)}
-h2.solid em.strong{font-weight:700}
-h2{font-family:var(--serif);font-weight:600;color:var(--wine);text-align:center;font-size:clamp(2rem,8vw,2.7rem);line-height:1.06;margin-bottom:10px}
+.kicker .n{display:inline-block;background:var(--wine);color:var(--gold-soft);border-radius:999px;padding:3px 10px;margin-inline-end:6px;letter-spacing:.1em}
+h2{font-family:var(--serif);font-weight:600;color:var(--wine);text-align:center;font-size:clamp(1.9rem,7.5vw,2.5rem);line-height:1.08;margin-bottom:8px}
+html[data-lang="ar"] h2{line-height:1.4}
 h2 em{color:var(--gold);font-weight:500}
-h2.solid em{color:var(--wine)}
-.sub{text-align:center;color:var(--muted);max-width:480px;margin:0 auto 26px}
-.sub .enfasis{font-weight:800;color:var(--wine);text-transform:uppercase;letter-spacing:.06em;font-size:.95em}
+.sub{text-align:center;color:var(--muted);max-width:480px;margin:0 auto 20px}
 
 /* ---------- guía interactiva ---------- */
-.bookend{display:flex;gap:12px;align-items:center;background:#fff;border:1px dashed var(--gold-soft);border-radius:16px;padding:12px 16px;max-width:520px;margin:0 auto;color:var(--muted);font-size:.94rem}
-.bookend .bi{flex:0 0 38px;height:38px;border-radius:50%;background:var(--lilac);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+.bookend{display:flex;gap:12px;align-items:center;background:#fff;border:1px dashed var(--gold-soft);border-radius:16px;padding:11px 14px;max-width:520px;margin:0 auto;color:var(--muted);font-size:.93rem}
+.bookend .bi{flex:0 0 36px;height:36px;border-radius:50%;background:var(--lilac);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
 .bookend strong{color:var(--wine)}
-.guide{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 18px 50px rgba(78,26,56,.10);padding:18px;max-width:520px;margin:16px auto}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--lilac);border-radius:999px;padding:5px;margin-bottom:18px}
+.guide{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 50px rgba(78,26,56,.10);padding:16px;max-width:520px;margin:12px auto}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--lilac);border-radius:999px;padding:5px;margin-bottom:16px}
 .tab{border:0;background:none;border-radius:999px;padding:9px 4px;font-weight:700;font-size:.92rem;color:var(--wine-2);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .2s,color .2s}
 .tab b{width:22px;height:22px;border-radius:50%;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem}
 .tab.on{background:var(--wine);color:var(--cream)}
 .tab.on b{background:var(--gold);border-color:var(--gold);color:var(--plum-ink)}
 
-.stage{perspective:1200px;max-width:250px;margin:0 auto 6px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.stage{perspective:1200px;max-width:240px;margin:0 auto 4px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .card3d{position:relative;aspect-ratio:4/5;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,.7,.2,1)}
 .card3d.flip{transform:rotateY(180deg)}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(46,15,34,.22)}
@@ -91,101 +108,117 @@ h2.solid em{color:var(--wine)}
 .hl{position:absolute;border:3px solid var(--gold);border-radius:14px;box-shadow:0 0 0 999px rgba(46,15,34,.38);opacity:0;transition:opacity .35s,top .45s,height .45s;pointer-events:none}
 .hl.show{opacity:1;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{border-color:var(--gold)}50%{border-color:#fff3d6}}
-.flip-hint{text-align:center;font-size:.8rem;color:var(--muted);margin:10px 0 14px}
-.flip-hint span{display:inline-flex;align-items:center;gap:6px}
+.flip-hint{text-align:center;font-size:.8rem;color:var(--muted);margin:8px 0 12px}
 
-.panel{text-align:center;min-height:132px}
-.panel .side{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--wine-2);background:var(--lilac);border-radius:999px;padding:4px 12px;margin-bottom:8px}
-.panel h3{font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--wine);line-height:1.05;margin-bottom:6px}
+.panel{text-align:center;min-height:126px}
+.panel .side{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--wine-2);background:var(--lilac);border-radius:999px;padding:4px 12px;margin-bottom:6px}
+.panel h3{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--wine);line-height:1.15;margin-bottom:4px}
 .panel p{color:var(--muted);font-size:1rem;max-width:400px;margin:0 auto}
-.panel .tip{display:block;margin-top:8px;font-size:.88rem;color:var(--wine-2);font-weight:600}
+.panel .tip{display:block;margin-top:6px;font-size:.88rem;color:var(--wine-2);font-weight:600}
 .fade{animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px}
-.nav button{border:1px solid var(--line);background:#fff;color:var(--wine);font-weight:700;border-radius:999px;padding:11px 18px;cursor:pointer;font-size:.92rem}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.nav button{border:1px solid var(--line);background:#fff;color:var(--wine);font-weight:700;border-radius:999px;padding:10px 16px;cursor:pointer;font-size:.9rem}
 .nav button.primary{background:var(--wine);border-color:var(--wine);color:var(--cream)}
 .nav button:disabled{opacity:.35;cursor:default}
 .dots{display:flex;gap:6px}
 .dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .25s}
 .dots i.on{background:var(--gold);width:22px;border-radius:99px}
 
-/* ---------- video ---------- */
-.video-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:12px;box-shadow:0 14px 40px rgba(78,26,56,.10);max-width:400px;margin:0 auto}
-.video-card .instagram-media{margin:0 auto!important;min-width:0!important;width:100%!important;max-width:540px!important;border-radius:14px!important}
-.ig-link{display:block;text-align:center;margin-top:12px;font-size:.88rem;color:var(--muted)}
-.ig-link a{color:var(--wine-2);font-weight:700}
+.vlink{display:flex;align-items:center;justify-content:center;gap:10px;max-width:520px;margin:12px auto 0;text-decoration:none;color:var(--wine);font-weight:700;font-size:.92rem}
+.vlink .play{width:30px;height:30px;border-radius:50%;background:var(--wine);color:var(--gold-soft);display:inline-flex;align-items:center;justify-content:center}
+.vlink .play svg{width:12px;height:12px}
+.vlink u{text-decoration-color:var(--gold);text-underline-offset:3px}
 
 /* ---------- 8 caminos ---------- */
-.paths{display:grid;grid-template-columns:repeat(2,1fr);align-items:start;gap:10px;max-width:520px;margin:0 auto}
-.path{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 12px;text-align:left;cursor:pointer;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
-.path .pn{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--wine);font-size:.98rem}
+.paths{display:grid;grid-template-columns:repeat(2,1fr);align-items:start;gap:8px;max-width:520px;margin:0 auto}
+.path{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:start;cursor:pointer;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+.path .pn{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--wine);font-size:.96rem}
 .path .pn i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--lilac);display:inline-flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
 .path .pd{display:block;max-height:0;overflow:hidden;color:var(--muted);font-size:.86rem;line-height:1.45;transition:max-height .35s ease,margin .35s}
 .path.open{border-color:var(--gold);box-shadow:0 8px 24px rgba(201,164,92,.18)}
-.path.open .pd{max-height:120px;margin-top:8px}
-.note{text-align:center;color:var(--muted);font-size:.9rem;max-width:460px;margin:16px auto 0}
+.path.open .pd{max-height:140px;margin-top:8px}
+.note{text-align:center;color:var(--muted);font-size:.9rem;max-width:460px;margin:14px auto 0}
 .note strong{color:var(--wine)}
 
 /* ---------- progreso ---------- */
-.tracker{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px 16px;max-width:520px;margin:0 auto;box-shadow:0 14px 40px rgba(78,26,56,.08)}
-.t-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.t-count{font-family:var(--serif);font-size:1.7rem;font-weight:600;color:var(--wine)}
+.tracker{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 14px;max-width:520px;margin:0 auto;box-shadow:0 14px 40px rgba(78,26,56,.08)}
+.t-count{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--wine);margin-bottom:6px}
 .t-count small{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-weight:600}
-.bar{height:8px;background:var(--lilac);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.bar{height:8px;background:var(--lilac);border-radius:99px;overflow:hidden;margin-bottom:14px}
 .bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#E2C27F);border-radius:99px;transition:width .4s}
-.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.day{aspect-ratio:1;border-radius:50%;border:1.5px solid var(--line);background:var(--cream);color:var(--wine-2);font-weight:700;font-size:.88rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}
+.day{aspect-ratio:1;border-radius:50%;border:1.5px solid var(--line);background:var(--cream);color:var(--wine-2);font-weight:700;font-size:.86rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;font-family:"Nunito Sans",system-ui,sans-serif}
 .day.done{background:var(--wine);border-color:var(--wine);color:var(--gold-soft)}
 .day.done::after{content:"✓";font-size:.95rem}
 .day.done span{display:none}
-.t-msg{text-align:center;color:var(--wine-2);font-weight:600;font-size:.92rem;margin-top:14px;min-height:1.4em}
-.reset{display:block;margin:10px auto 0;background:none;border:0;color:var(--muted);font-size:.8rem;text-decoration:underline;cursor:pointer}
+.t-msg{text-align:center;color:var(--wine-2);font-weight:600;font-size:.92rem;margin-top:12px;min-height:1.4em}
+.reset{display:block;margin:8px auto 0;background:none;border:0;color:var(--muted);font-size:.8rem;text-decoration:underline;cursor:pointer}
 
 /* ---------- preguntas ---------- */
 .faq{max-width:520px;margin:0 auto}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
-.faq summary{list-style:none;cursor:pointer;padding:15px 18px;font-weight:700;color:var(--wine);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:13px 16px;font-weight:700;color:var(--wine);display:flex;justify-content:space-between;align-items:center;gap:10px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-size:1.4rem;color:var(--gold);transition:transform .2s;line-height:1}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 18px 16px;color:var(--muted);font-size:.95rem}
+.faq details p{padding:0 16px 14px;color:var(--muted);font-size:.95rem}
 
 /* ---------- planner ---------- */
-.planner{background:radial-gradient(120% 90% at 50% 0%,#6A2A57 0%,#4A1B3D 55%,#2A0D21 100%);color:var(--cream);border-radius:26px;padding:38px 22px;text-align:center;position:relative;overflow:hidden;max-width:560px;margin:0 auto}
-.planner::before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,164,92,.4);border-radius:20px;pointer-events:none}
+.planner{background:radial-gradient(120% 90% at 50% 0%,#6A2A57 0%,#4A1B3D 55%,#2A0D21 100%);color:var(--cream);border-radius:24px;padding:32px 20px;text-align:center;position:relative;overflow:hidden;max-width:560px;margin:0 auto}
+.planner::before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,164,92,.4);border-radius:18px;pointer-events:none}
 .planner h2{color:var(--cream)}
 .planner h2 em{color:var(--gold-soft)}
-.planner p{color:#F1E5EC;max-width:420px;margin:0 auto 22px}
+.planner p{color:#F1E5EC;max-width:420px;margin:0 auto 18px}
+.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--plum-ink);font-weight:800;font-size:1rem;text-decoration:none;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.2);transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
 
 /* ---------- contacto ---------- */
-.contact{display:grid;gap:10px;max-width:460px;margin:0 auto}
-.contact a{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 16px;text-decoration:none;transition:border-color .15s,transform .15s}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:520px;margin:0 auto}
+.contact a{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:11px 12px;text-decoration:none;transition:border-color .15s,transform .15s;min-width:0}
 .contact a:hover{border-color:var(--gold);transform:translateY(-1px)}
-.ic{flex:0 0 42px;height:42px;border-radius:50%;background:var(--lilac);color:var(--wine);display:flex;align-items:center;justify-content:center}
-.ic svg{width:21px;height:21px}
-.contact strong{display:block;color:var(--wine);font-size:1rem}
-.contact span.small{color:var(--muted);font-size:.88rem}
-.contact .go{margin-left:auto;color:var(--gold);font-size:1.2rem}
+.ic{flex:0 0 38px;height:38px;border-radius:50%;background:var(--lilac);color:var(--wine);display:flex;align-items:center;justify-content:center}
+.ic svg{width:19px;height:19px}
+.contact .tx{min-width:0}
+.contact strong{display:block;color:var(--wine);font-size:.95rem;line-height:1.25}
+.contact span.small{display:block;color:var(--muted);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:start}
+html[dir="rtl"] .contact span.small{text-align:right}
+@media (max-width:360px){.contact{grid-template-columns:1fr}}
 
-.sign{text-align:center;max-width:480px;margin:40px auto 0;padding-top:30px;border-top:1px solid var(--line)}
-.sign img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--gold-soft);margin:0 auto 16px;box-shadow:0 10px 30px rgba(78,26,56,.15)}
-.sign .name{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--wine);line-height:1.1;margin-bottom:4px}
-.sign .role{color:var(--wine-2);font-weight:700;font-size:.92rem;margin-bottom:12px}
-.sign p{color:var(--muted);font-size:.98rem}
+.sign{display:flex;gap:16px;align-items:center;max-width:520px;margin:22px auto 0;padding:16px;background:#fff;border:1px solid var(--line);border-radius:20px}
+.sign img{flex:0 0 84px;width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--gold-soft)}
+.sign .name{font-family:var(--serif);font-size:1.45rem;font-weight:600;color:var(--wine);line-height:1.15}
+.sign .role{color:var(--wine-2);font-weight:700;font-size:.82rem;margin:2px 0 4px;line-height:1.35}
+.sign p{color:var(--muted);font-size:.88rem;line-height:1.45}
 
-footer{background:var(--wine);color:var(--gold-soft);text-align:center;padding:34px 20px}
-footer .quote{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--cream);margin-bottom:8px}
-footer small{font-size:.82rem;opacity:.85}
+/* ---------- compartir ---------- */
+.share{background:radial-gradient(120% 90% at 50% 0%,#6A2A57 0%,#4A1B3D 55%,#2A0D21 100%);color:var(--cream);text-align:center;padding:40px 0 44px;position:relative;overflow:hidden}
+.share::before{content:"";position:absolute;inset:12px;border:1px solid rgba(201,164,92,.4);border-radius:22px;pointer-events:none}
+.share .step-tag{margin-bottom:12px}
+.share h2{color:var(--cream);font-size:clamp(2rem,8vw,2.7rem)}
+.share h2 em{color:var(--gold-soft)}
+.share p.big{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:#F1E5EC;max-width:430px;margin:0 auto 22px;line-height:1.35}
+html[data-lang="ar"] .share p.big{font-style:normal;font-size:1.25rem;line-height:1.7}
+.share .btns{position:relative;display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto}
+.share .btns .cta{width:100%}
+.ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:transparent;color:var(--cream);border:1px solid rgba(231,211,166,.55);border-radius:999px;padding:13px 22px;font-weight:700;font-size:.96rem;cursor:pointer}
+.ghost:hover{background:rgba(251,246,239,.08)}
+.share svg{width:20px;height:20px}
+.copied{display:block;min-height:1.3em;margin-top:8px;color:var(--gold-soft);font-size:.85rem;font-weight:700}
+
+footer{background:var(--plum-ink);color:var(--gold-soft);text-align:center;padding:24px 20px}
+footer .quote{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--cream);margin-bottom:4px}
+footer small{font-size:.78rem;opacity:.85}
 
 /* ---------- barra inferior tipo app ---------- */
-.appbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(251,246,239,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+.appbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(251,246,239,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:5px 6px calc(5px + env(safe-area-inset-bottom))}
 .appbar .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .appbar a{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--muted);font-size:.7rem;font-weight:700;padding:6px 2px;border-radius:12px}
 .appbar a svg{width:22px;height:22px}
 .appbar a.on{color:var(--wine);background:var(--lilac)}
 
-@media (min-width:640px){ section.block{padding:68px 0} }
+@media (min-width:640px){ section.block{padding:56px 0} .hero{padding:40px 0 44px} }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
 </style>
 </head>
@@ -194,55 +227,85 @@ footer small{font-size:.82rem;opacity:.85}
 <header class="top">
   <div class="wrap">
     <div class="brand">Mindful Wellness &amp; Coaching</div>
-    <div class="lang" role="group" aria-label="Idioma / Language">
+    <div class="lang" role="group" aria-label="Idioma / Language / اللغة">
       <button type="button" data-set-lang="es" class="on">ES</button>
       <button type="button" data-set-lang="en">EN</button>
+      <button type="button" data-set-lang="ar">عربي</button>
     </div>
   </div>
 </header>
 
-<!-- ENCABEZADO -->
+<!-- ENCABEZADO + PASO 1 -->
 <section class="hero" id="inicio">
   <div class="wrap">
     <img class="logo-badge" src="../assets/logo-light.png" alt="Mindful Wellness">
-    <h1 lang="es">Bienvenida a<br><em>tu cajita</em></h1>
-    <h1 lang="en">Welcome to<br><em>your box of wellness</em></h1>
-    <p class="lead" lang="es"><span class="l1">31 días · 31 mensajes · 31 pequeños momentos</span><span class="l2">para volver a ti</span><span class="l3">Así de fácil</span></p>
-    <p class="lead" lang="en"><span class="l1">31 days · 31 messages · 31 small moments</span><span class="l2">to come back to yourself</span><span class="l3">It's this easy</span></p>
+    <h1 lang="es">Así funciona<br><em>tu cajita</em></h1>
+    <h1 lang="en">Here's how<br><em>your box works</em></h1>
+    <h1 lang="ar">هكذا تعمل<br><em>علبتكِ</em></h1>
+    <p class="lead" lang="es"><span class="l1">31 días · 31 mensajes · 31 pequeños momentos</span><span class="l2">para volver a ti</span></p>
+    <p class="lead" lang="en"><span class="l1">31 days · 31 messages · 31 small moments</span><span class="l2">to come back to yourself</span></p>
+    <p class="lead" lang="ar"><span class="l1">31 يومًا · 31 رسالة · 31 لحظة صغيرة</span><span class="l2">لتعودي إلى نفسكِ</span></p>
     <div class="quick">
-      <span><b>1</b><em lang="es" style="font-style:normal">Lee</em><em lang="en" style="font-style:normal">Read</em></span>
-      <span><b>2</b><em lang="es" style="font-style:normal">Haz</em><em lang="en" style="font-style:normal">Do</em></span>
-      <span><b>3</b><em lang="es" style="font-style:normal">Reflexiona</em><em lang="en" style="font-style:normal">Reflect</em></span>
+      <span><b>1</b><em lang="es" style="font-style:normal">Lee</em><em lang="en" style="font-style:normal">Read</em><em lang="ar" style="font-style:normal">اقرئي</em></span>
+      <span><b>2</b><em lang="es" style="font-style:normal">Haz</em><em lang="en" style="font-style:normal">Do</em><em lang="ar" style="font-style:normal">افعلي</em></span>
+      <span><b>3</b><em lang="es" style="font-style:normal">Reflexiona</em><em lang="en" style="font-style:normal">Reflect</em><em lang="ar" style="font-style:normal">تأمّلي</em></span>
     </div>
-    <a class="cta" href="#guia"><span lang="es">Ver cómo funciona</span><span lang="en">See how it works</span> →</a>
     <small lang="es">Solo 5 minutos cada mañana</small>
     <small lang="en">Just 5 minutes each morning</small>
+    <small lang="ar">5 دقائق فقط كل صباح</small>
+
+    <div class="follow" id="siguenos">
+      <span class="step-tag"><span lang="es">Paso 1</span><span lang="en">Step 1</span><span lang="ar">الخطوة 1</span></span>
+      <h2 lang="es">Síguenos y <em>únete</em></h2>
+      <h2 lang="en">Follow us and <em>join in</em></h2>
+      <h2 lang="ar">تابعينا و<em>انضمي إلينا</em></h2>
+      <p lang="es">Sé parte de nuestra comunidad: más mensajes, eventos y sorpresas para ti.</p>
+      <p lang="en">Be part of our community: more messages, events and surprises for you.</p>
+      <p lang="ar">كوني جزءًا من مجتمعنا: المزيد من الرسائل والفعاليات والمفاجآت لكِ.</p>
+      <div class="soc">
+        <a class="ig" href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <span lang="es">Seguir</span><span lang="en">Follow</span><span lang="ar">تابعي</span>
+        </a>
+        <a href="https://wa.me/12016799969" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a href="tel:+12016799969">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          <span lang="es">Llamar</span><span lang="en">Call</span><span lang="ar">اتصلي</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- GUÍA INTERACTIVA -->
+<!-- PASO 2: GUÍA INTERACTIVA -->
 <section class="block" id="guia">
   <div class="wrap">
-    <div class="kicker"><span lang="es">Tu ritual diario</span><span lang="en">Your daily ritual</span></div>
+    <div class="kicker"><span class="n"><span lang="es">Paso 2</span><span lang="en">Step 2</span><span lang="ar">الخطوة 2</span></span><span lang="es">Tu ritual diario</span><span lang="en">Your daily ritual</span><span lang="ar">طقسكِ اليومي</span></div>
     <h2 lang="es">Una tarjeta, <em>tres pasos</em></h2>
     <h2 lang="en">One card, <em>three steps</em></h2>
+    <h2 lang="ar">بطاقة واحدة، <em>ثلاث خطوات</em></h2>
     <p class="sub" lang="es">Toca cada paso y mira en qué parte de la tarjeta está.</p>
     <p class="sub" lang="en">Tap each step to see where it is on the card.</p>
+    <p class="sub" lang="ar">المسي كل خطوة لتري مكانها على البطاقة.</p>
 
     <div class="bookend">
       <div class="bi">☀️</div>
       <div lang="es"><strong>Antes de empezar:</strong> elige tu momento, unos minutos cada mañana. No tienes que empezar el día 1 del mes.</div>
       <div lang="en"><strong>Before you begin:</strong> choose your moment, a few minutes each morning. You don't have to start on the 1st of the month.</div>
+      <div lang="ar"><strong>قبل أن تبدئي:</strong> اختاري لحظتكِ، بضع دقائق كل صباح. لا يلزم أن تبدئي في اليوم الأول من الشهر.</div>
     </div>
 
     <div class="guide">
       <div class="tabs" role="tablist">
-        <button class="tab on" data-step="0" role="tab"><b>1</b><span lang="es">Lee</span><span lang="en">Read</span></button>
-        <button class="tab" data-step="1" role="tab"><b>2</b><span lang="es">Haz</span><span lang="en">Do</span></button>
-        <button class="tab" data-step="2" role="tab"><b>3</b><span lang="es">Reflexiona</span><span lang="en">Reflect</span></button>
+        <button class="tab on" data-step="0" role="tab"><b>1</b><span lang="es">Lee</span><span lang="en">Read</span><span lang="ar">اقرئي</span></button>
+        <button class="tab" data-step="1" role="tab"><b>2</b><span lang="es">Haz</span><span lang="en">Do</span><span lang="ar">افعلي</span></button>
+        <button class="tab" data-step="2" role="tab"><b>3</b><span lang="es">Reflexiona</span><span lang="en">Reflect</span><span lang="ar">تأمّلي</span></button>
       </div>
 
-      <div class="stage" id="stage" aria-label="Tarjeta de ejemplo">
+      <div class="stage" id="stage" aria-label="Tarjeta de ejemplo" dir="ltr">
         <div class="card3d" id="card">
           <div class="face front">
             <img lang="es" src="../assets/es-frente.jpg" alt="Frente de la tarjeta: la frase del día">
@@ -256,14 +319,14 @@ footer small{font-size:.82rem;opacity:.85}
           </div>
         </div>
       </div>
-      <div class="flip-hint"><span lang="es">👆 Toca la tarjeta para darle la vuelta</span><span lang="en">👆 Tap the card to flip it</span></div>
+      <div class="flip-hint"><span lang="es">👆 Toca la tarjeta para darle la vuelta</span><span lang="en">👆 Tap the card to flip it</span><span lang="ar">👆 المسي البطاقة لقلبها</span></div>
 
       <div class="panel" id="panel" aria-live="polite"></div>
 
       <div class="nav">
-        <button type="button" id="prev"><span lang="es">← Atrás</span><span lang="en">← Back</span></button>
+        <button type="button" id="prev"></button>
         <div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
-        <button type="button" class="primary" id="next"><span lang="es">Siguiente →</span><span lang="en">Next →</span></button>
+        <button type="button" class="primary" id="next"></button>
       </div>
     </div>
 
@@ -271,116 +334,107 @@ footer small{font-size:.82rem;opacity:.85}
       <div class="bi">🌙</div>
       <div lang="es"><strong>Al terminar:</strong> guarda la tarjeta y vuelve mañana por la siguiente. No tiene que ser perfecto.</div>
       <div lang="en"><strong>When you're done:</strong> put the card away and come back tomorrow for the next one. It doesn't have to be perfect.</div>
+      <div lang="ar"><strong>عند الانتهاء:</strong> احتفظي بالبطاقة وعودي غدًا لسحب البطاقة التالية. لا يلزم أن يكون الأمر مثاليًا.</div>
     </div>
-  </div>
-</section>
 
-<!-- VIDEO -->
-<section class="block alt" id="video">
-  <div class="wrap">
-    <div class="kicker"><span lang="es">Un mensaje para ti</span><span lang="en">A message for you</span></div>
-    <h2 lang="es">Míralo en <em>un minuto</em></h2>
-    <h2 lang="en">See it in <em>one minute</em></h2>
-    <p class="sub" lang="es">Dale play a este video corto <span class="enfasis">antes</span> de sacar tu primera tarjeta.</p>
-    <p class="sub" lang="en">Press play on this short video <span class="enfasis">before</span> you pull your first card.</p>
-    <div class="video-card">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeQDVu_uoOo/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;margin:0 auto;max-width:540px;min-width:0;padding:0;width:100%;">
-        <a href="https://www.instagram.com/reel/DeQDVu_uoOo/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener" style="display:block;padding:40px 16px;text-align:center;color:#6B2A4E;font-weight:700;text-decoration:none;">
-          <span lang="es">Ver esta publicación en Instagram</span><span lang="en">View this post on Instagram</span>
-        </a>
-      </blockquote>
-    </div>
-    <p class="ig-link">
-      <span lang="es">¿No carga el video?</span><span lang="en">Video not loading?</span>
-      <a href="https://www.instagram.com/reel/DeQDVu_uoOo/" target="_blank" rel="noopener"><span lang="es">Ver en Instagram</span><span lang="en">Watch on Instagram</span></a>
-    </p>
+    <a class="vlink" href="https://www.instagram.com/reel/DeQDVu_uoOo/" target="_blank" rel="noopener">
+      <span class="play"><svg viewBox="0 0 12 12"><path d="M3 1.5l7 4.5-7 4.5z" fill="currentColor"/></svg></span>
+      <u lang="es">¿Prefieres verlo? Mira el video en Instagram</u>
+      <u lang="en">Prefer to watch? See the video on Instagram</u>
+      <u lang="ar">تفضّلين المشاهدة؟ شاهدي الفيديو على إنستغرام</u>
+    </a>
   </div>
 </section>
 
 <!-- 8 CAMINOS -->
-<section class="block" id="caminos">
+<section class="block alt" id="caminos">
   <div class="wrap">
-    <div class="kicker"><span lang="es">Tus 31 tarjetas</span><span lang="en">Your 31 cards</span></div>
+    <div class="kicker"><span lang="es">Tus 31 tarjetas</span><span lang="en">Your 31 cards</span><span lang="ar">بطاقاتكِ الـ31</span></div>
     <h2 lang="es">Los <em>8 caminos</em></h2>
     <h2 lang="en">The <em>8 paths</em></h2>
+    <h2 lang="ar"><em>المسارات الثمانية</em></h2>
     <p class="sub" lang="es">Cada tarjeta pertenece a un camino. Toca uno para conocerlo.</p>
     <p class="sub" lang="en">Each card belongs to a path. Tap one to learn about it.</p>
+    <p class="sub" lang="ar">كل بطاقة تنتمي إلى مسار. المسي أحدها لتتعرّفي عليه.</p>
     <div class="paths" id="paths">
-      <button class="path"><span class="pn"><i>🎯</i><span lang="es">Enfoque</span><span lang="en">Focus</span></span>
-        <span class="pd" lang="es">Poner tu atención y energía en lo que de verdad quieres hacer crecer.</span><span class="pd" lang="en">Putting your attention and energy on what you truly want to grow.</span></button>
-      <button class="path"><span class="pn"><i>🧭</i><span lang="es">Disciplina</span><span lang="en">Discipline</span></span>
-        <span class="pd" lang="es">Pequeños hábitos que repites, aunque no tengas ganas.</span><span class="pd" lang="en">Small habits you repeat, even when you don't feel like it.</span></button>
-      <button class="path"><span class="pn"><i>✨</i><span lang="es">Confianza</span><span lang="en">Confidence</span></span>
-        <span class="pd" lang="es">Creer en ti y en lo que eres capaz de lograr.</span><span class="pd" lang="en">Believing in yourself and what you're able to achieve.</span></button>
-      <button class="path"><span class="pn"><i>👣</i><span lang="es">Acción</span><span lang="en">Action</span></span>
-        <span class="pd" lang="es">Dar el primer paso, aunque sea pequeño.</span><span class="pd" lang="en">Taking the first step, even a small one.</span></button>
-      <button class="path"><span class="pn"><i>🌿</i><span lang="es">Bienestar</span><span lang="en">Well-being</span></span>
-        <span class="pd" lang="es">Cuidar tu cuerpo, tu mente y tu descanso.</span><span class="pd" lang="en">Caring for your body, your mind and your rest.</span></button>
-      <button class="path"><span class="pn"><i>💜</i><span lang="es">Amor propio</span><span lang="en">Self-love</span></span>
-        <span class="pd" lang="es">Tratarte con la misma ternura que das a los demás.</span><span class="pd" lang="en">Treating yourself with the same tenderness you give others.</span></button>
-      <button class="path"><span class="pn"><i>⛰️</i><span lang="es">Perseverancia</span><span lang="en">Perseverance</span></span>
-        <span class="pd" lang="es">Seguir adelante, un día a la vez.</span><span class="pd" lang="en">Keep going, one day at a time.</span></button>
-      <button class="path"><span class="pn"><i>🔭</i><span lang="es">Visión</span><span lang="en">Vision</span></span>
-        <span class="pd" lang="es">Ver con claridad la vida que quieres construir.</span><span class="pd" lang="en">Seeing clearly the life you want to build.</span></button>
+      <button class="path"><span class="pn"><i>🎯</i><span lang="es">Enfoque</span><span lang="en">Focus</span><span lang="ar">التركيز</span></span>
+        <span class="pd" lang="es">Poner tu atención y energía en lo que de verdad quieres hacer crecer.</span><span class="pd" lang="en">Putting your attention and energy on what you truly want to grow.</span><span class="pd" lang="ar">أن تضعي انتباهكِ وطاقتكِ فيما تريدين حقًا أن ينمو.</span></button>
+      <button class="path"><span class="pn"><i>🧭</i><span lang="es">Disciplina</span><span lang="en">Discipline</span><span lang="ar">الانضباط</span></span>
+        <span class="pd" lang="es">Pequeños hábitos que repites, aunque no tengas ganas.</span><span class="pd" lang="en">Small habits you repeat, even when you don't feel like it.</span><span class="pd" lang="ar">عادات صغيرة تكرّرينها، حتى عندما لا تشعرين بالرغبة.</span></button>
+      <button class="path"><span class="pn"><i>✨</i><span lang="es">Confianza</span><span lang="en">Confidence</span><span lang="ar">الثقة</span></span>
+        <span class="pd" lang="es">Creer en ti y en lo que eres capaz de lograr.</span><span class="pd" lang="en">Believing in yourself and what you're able to achieve.</span><span class="pd" lang="ar">أن تؤمني بنفسكِ وبما تستطيعين تحقيقه.</span></button>
+      <button class="path"><span class="pn"><i>👣</i><span lang="es">Acción</span><span lang="en">Action</span><span lang="ar">العمل</span></span>
+        <span class="pd" lang="es">Dar el primer paso, aunque sea pequeño.</span><span class="pd" lang="en">Taking the first step, even a small one.</span><span class="pd" lang="ar">أن تخطي الخطوة الأولى، ولو كانت صغيرة.</span></button>
+      <button class="path"><span class="pn"><i>🌿</i><span lang="es">Bienestar</span><span lang="en">Well-being</span><span lang="ar">العافية</span></span>
+        <span class="pd" lang="es">Cuidar tu cuerpo, tu mente y tu descanso.</span><span class="pd" lang="en">Caring for your body, your mind and your rest.</span><span class="pd" lang="ar">أن تعتني بجسدكِ وعقلكِ وراحتكِ.</span></button>
+      <button class="path"><span class="pn"><i>💜</i><span lang="es">Amor propio</span><span lang="en">Self-love</span><span lang="ar">حبّ الذات</span></span>
+        <span class="pd" lang="es">Tratarte con la misma ternura que das a los demás.</span><span class="pd" lang="en">Treating yourself with the same tenderness you give others.</span><span class="pd" lang="ar">أن تعاملي نفسكِ بالحنان نفسه الذي تمنحينه للآخرين.</span></button>
+      <button class="path"><span class="pn"><i>⛰️</i><span lang="es">Perseverancia</span><span lang="en">Perseverance</span><span lang="ar">المثابرة</span></span>
+        <span class="pd" lang="es">Seguir adelante, un día a la vez.</span><span class="pd" lang="en">Keep going, one day at a time.</span><span class="pd" lang="ar">أن تواصلي التقدّم، يومًا بعد يوم.</span></button>
+      <button class="path"><span class="pn"><i>🔭</i><span lang="es">Visión</span><span lang="en">Vision</span><span lang="ar">الرؤية</span></span>
+        <span class="pd" lang="es">Ver con claridad la vida que quieres construir.</span><span class="pd" lang="en">Seeing clearly the life you want to build.</span><span class="pd" lang="ar">أن تري بوضوح الحياة التي تريدين بناءها.</span></button>
     </div>
     <p class="note" lang="es">💡 <strong>Truco:</strong> busca la palabra pequeña debajo de la frase, en el frente de tu tarjeta. Ese es tu camino de hoy.</p>
     <p class="note" lang="en">💡 <strong>A little secret:</strong> look for the small word under the phrase on the front of your card. That's today's path.</p>
+    <p class="note" lang="ar">💡 <strong>سرّ صغير:</strong> ابحثي عن الكلمة الصغيرة تحت العبارة على وجه بطاقتكِ. هذا هو مساركِ اليوم.</p>
   </div>
 </section>
 
-<!-- PROGRESO -->
-<section class="block alt" id="progreso">
+<!-- PASO 3: PROGRESO -->
+<section class="block" id="progreso">
   <div class="wrap">
-    <div class="kicker pill"><span lang="es">Tu camino</span><span lang="en">Your journey</span></div>
-    <h2 lang="es">Mis <em>31 días</em></h2>
-    <h2 lang="en">My <em>31 days</em></h2>
+    <div class="kicker"><span class="n"><span lang="es">Paso 3</span><span lang="en">Step 3</span><span lang="ar">الخطوة 3</span></span><span lang="es">Tu camino</span><span lang="en">Your journey</span><span lang="ar">رحلتكِ</span></div>
+    <h2 lang="es">Marca tus <em>31 días</em></h2>
+    <h2 lang="en">Track your <em>31 days</em></h2>
+    <h2 lang="ar">سجّلي <em>أيامكِ الـ31</em></h2>
     <p class="sub" lang="es">Cada día que uses tu tarjeta, toca su número para marcarlo.</p>
     <p class="sub" lang="en">Each day you use your card, tap its number to mark it.</p>
+    <p class="sub" lang="ar">في كل يوم تستخدمين فيه بطاقتكِ، المسي رقمه لتحديده.</p>
     <div class="tracker">
-      <div class="t-head">
-        <div class="t-count"><span id="count">0</span> <small lang="es">de 31 días</small><small lang="en">of 31 days</small></div>
-      </div>
+      <div class="t-count"><span id="count">0</span> <small lang="es">de 31 días</small><small lang="en">of 31 days</small><small lang="ar">من 31 يومًا</small></div>
       <div class="bar"><span id="bar"></span></div>
-      <div class="days" id="days"></div>
+      <div class="days" id="days" dir="ltr"></div>
       <p class="t-msg" id="tmsg"></p>
-      <button class="reset" id="reset" type="button"><span lang="es">Empezar de nuevo</span><span lang="en">Start over</span></button>
+      <button class="reset" id="reset" type="button"><span lang="es">Empezar de nuevo</span><span lang="en">Start over</span><span lang="ar">ابدئي من جديد</span></button>
     </div>
   </div>
 </section>
 
 <!-- PREGUNTAS -->
-<section class="block" id="preguntas">
+<section class="block alt" id="preguntas">
   <div class="wrap">
-    <div class="kicker"><span lang="es">Dudas rápidas</span><span lang="en">Quick questions</span></div>
+    <div class="kicker"><span lang="es">Dudas rápidas</span><span lang="en">Quick questions</span><span lang="ar">أسئلة سريعة</span></div>
     <h2 lang="es">¿Y si <em>…?</em></h2>
     <h2 lang="en">What <em>if…?</em></h2>
+    <h2 lang="ar">ماذا <em>لو…؟</em></h2>
     <div class="faq">
-      <details><summary><span lang="es">¿Tengo que empezar el día 1 del mes?</span><span lang="en">Do I have to start on the 1st?</span></summary>
+      <details><summary><span lang="es">¿Tengo que empezar el día 1 del mes?</span><span lang="en">Do I have to start on the 1st?</span><span lang="ar">هل يجب أن أبدأ في اليوم الأول من الشهر؟</span></summary>
         <p lang="es">No. Las tarjetas no tienen fecha. Empieza el día que tú quieras y usa una tarjeta por día.</p>
-        <p lang="en">No. The cards are undated. Start any day you like and use one card per day.</p></details>
-      <details><summary><span lang="es">¿Y si un día no la uso?</span><span lang="en">What if I skip a day?</span></summary>
+        <p lang="en">No. The cards are undated. Start any day you like and use one card per day.</p>
+        <p lang="ar">لا. البطاقات غير مؤرّخة. ابدئي في أي يوم تريدينه واستخدمي بطاقة واحدة كل يوم.</p></details>
+      <details><summary><span lang="es">¿Y si un día no la uso?</span><span lang="en">What if I skip a day?</span><span lang="ar">ماذا لو لم أستخدمها في أحد الأيام؟</span></summary>
         <p lang="es">No pasa nada. Retoma al día siguiente con la tarjeta que sigue, sin culpa. No tiene que ser perfecto.</p>
-        <p lang="en">That's okay. Pick up the next day with the next card, no guilt. It doesn't have to be perfect.</p></details>
-      <details><summary><span lang="es">¿Qué hago con la pregunta de reflexión?</span><span lang="en">What do I do with the reflection question?</span></summary>
+        <p lang="en">That's okay. Pick up the next day with the next card, no guilt. It doesn't have to be perfect.</p>
+        <p lang="ar">لا بأس. تابعي في اليوم التالي بالبطاقة التالية، دون أي شعور بالذنب. لا يلزم أن يكون الأمر مثاليًا.</p></details>
+      <details><summary><span lang="es">¿Qué hago con la pregunta de reflexión?</span><span lang="en">What do I do with the reflection question?</span><span lang="ar">ماذا أفعل بسؤال التأمّل؟</span></summary>
         <p lang="es">Lo que te salga natural: escríbela en tu agenda, piénsala con tu café o llévala contigo durante el día.</p>
-        <p lang="en">Whatever feels natural: write it in your planner, think about it over coffee, or carry it with you through the day.</p></details>
-      <details><summary><span lang="es">¿Cuánto tiempo me toma?</span><span lang="en">How long does it take?</span></summary>
+        <p lang="en">Whatever feels natural: write it in your planner, think about it over coffee, or carry it with you through the day.</p>
+        <p lang="ar">ما تشعرين أنه طبيعي: اكتبيه في مفكّرتكِ، أو فكّري فيه مع قهوتكِ، أو احمليه معكِ طوال اليوم.</p></details>
+      <details><summary><span lang="es">¿Cuánto tiempo me toma?</span><span lang="en">How long does it take?</span><span lang="ar">كم من الوقت يستغرق؟</span></summary>
         <p lang="es">Unos 5 minutos en la mañana. La tarea del día la haces cuando puedas durante tu día.</p>
-        <p lang="en">About 5 minutes in the morning. You can do the day's task whenever you can during your day.</p></details>
+        <p lang="en">About 5 minutes in the morning. You can do the day's task whenever you can during your day.</p>
+        <p lang="ar">حوالي 5 دقائق في الصباح. أمّا مهمة اليوم فيمكنكِ القيام بها متى استطعتِ خلال يومكِ.</p></details>
     </div>
-  </div>
-</section>
 
-<!-- PLANNER -->
-<section class="block alt" id="planner">
-  <div class="wrap">
-    <div class="planner">
+    <div class="planner" id="planner" style="margin-top:28px">
       <h2 lang="es"><em>31 Días de Crecimiento</em><br>Mi Agenda</h2>
       <h2 lang="en"><em>31 Days of Growth</em><br>Planner</h2>
+      <h2 lang="ar"><em>31 يومًا من النمو</em><br>مفكّرتي</h2>
       <p lang="es">Acompaña tus tarjetas con tu agenda: un espacio para anotar tus tareas, tus respuestas y lo que vas descubriendo de ti.</p>
       <p lang="en">Pair your cards with your planner: a space to note your tasks, your answers, and what you discover about yourself.</p>
+      <p lang="ar">رافقي بطاقاتكِ بمفكّرتكِ: مساحة لتدوين مهامكِ وإجاباتكِ وما تكتشفينه عن نفسكِ.</p>
       <!-- PEGAR AQUÍ ENLACE DEL PLANNER -->
-      <a class="cta" href="#" target="_blank" rel="noopener"><span lang="es">Abrir mi agenda</span><span lang="en">Open my planner</span> →</a>
+      <a class="cta" href="#" target="_blank" rel="noopener"><span lang="es">Abrir mi agenda</span><span lang="en">Open my planner</span><span lang="ar">افتحي مفكّرتي</span> <span class="flip-x">→</span></a>
     </div>
   </div>
 </section>
@@ -388,52 +442,88 @@ footer small{font-size:.82rem;opacity:.85}
 <!-- CONTACTO -->
 <section class="block" id="contacto">
   <div class="wrap">
-    <div class="kicker pill"><span lang="es">Seguimos en contacto</span><span lang="en">Let's stay in touch</span></div>
-    <h2 lang="es" class="solid">Sígueme y <em class="strong">contáctame</em></h2>
-    <h2 lang="en" class="solid"><em>Follow me and stay connected</em></h2>
-    <p class="sub" lang="es">Si tienes preguntas o quieres contarme cómo te va, escríbeme.</p>
-    <p class="sub" lang="en">If you have questions or want to tell me how it's going, write to me.</p>
+    <div class="kicker"><span lang="es">Seguimos en contacto</span><span lang="en">Let's stay in touch</span><span lang="ar">لنبقَ على تواصل</span></div>
+    <h2 lang="es">Contáctanos y <em>síguenos</em></h2>
+    <h2 lang="en">Contact us &amp; <em>follow us</em></h2>
+    <h2 lang="ar">تواصلي معنا و<em>تابعينا</em></h2>
+    <p class="sub" lang="es">Síguenos en redes para más mensajes, eventos y novedades. ¿Tienes preguntas? Escríbenos o llámanos.</p>
+    <p class="sub" lang="en">Follow us for more messages, events and news. Questions? Message or call us.</p>
+    <p class="sub" lang="ar">تابعينا على مواقع التواصل لمزيد من الرسائل والفعاليات والأخبار. لديكِ أسئلة؟ راسلينا أو اتصلي بنا.</p>
 
     <div class="contact">
       <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
-        <span><strong>Instagram</strong><span class="small">@mindfulwellnessnyc</span></span><span class="go">›</span>
+        <span class="tx"><strong lang="es">Síguenos</strong><strong lang="en">Follow us</strong><strong lang="ar">تابعينا</strong><span class="small">@mindfulwellnessnyc</span></span>
       </a>
       <a href="https://wa.me/12016799969" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></span>
-        <span><strong>WhatsApp</strong><span class="small">201-679-9969</span></span><span class="go">›</span>
+        <span class="tx"><strong>WhatsApp</strong><span class="small">201-679-9969</span></span>
+      </a>
+      <a href="tel:+12016799969">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+        <span class="tx"><strong lang="es">Llámanos</strong><strong lang="en">Call us</strong><strong lang="ar">اتصلي بنا</strong><span class="small">201-679-9969</span></span>
       </a>
       <a href="https://mindfulwellness.nyc" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3z"/></svg></span>
-        <span><strong lang="es">Sitio web</strong><strong lang="en">Website</strong><span class="small">mindfulwellness.nyc</span></span><span class="go">›</span>
+        <span class="tx"><strong lang="es">Sitio web</strong><strong lang="en">Website</strong><strong lang="ar">الموقع</strong><span class="small">mindfulwellness.nyc</span></span>
       </a>
     </div>
 
     <div class="sign">
       <img src="../assets/monica.jpg" alt="Mónica Villalba">
-      <div class="name" lang="es">Mónica Villalba</div>
-      <div class="name" lang="en">Monica Villalba</div>
-      <div class="role" lang="es">Coach de Salud y Bienestar certificada en EE.&nbsp;UU.<br>Mindful Wellness &amp; Coaching</div>
-      <div class="role" lang="en">U.S. Certified Health &amp; Wellness Coach<br>Mindful Wellness &amp; Coaching</div>
-      <p lang="es">Por más de 25 años he acompañado a mujeres en su bienestar, su crecimiento y sus metas.</p>
-      <p lang="en">For over 25 years I've walked alongside women in their well-being, growth and goals.</p>
+      <div>
+        <div class="name" lang="es">Mónica Villalba</div>
+        <div class="name" lang="en">Monica Villalba</div>
+        <div class="name" lang="ar">مونيكا فيالبا</div>
+        <div class="role" lang="es">Coach de Salud y Bienestar certificada en EE.&nbsp;UU.</div>
+        <div class="role" lang="en">U.S. Certified Health &amp; Wellness Coach</div>
+        <div class="role" lang="ar">مدرّبة صحة وعافية معتمدة في الولايات المتحدة</div>
+        <p lang="es">Por más de 25 años he acompañado a mujeres en su bienestar, su crecimiento y sus metas.</p>
+        <p lang="en">For over 25 years I've walked alongside women in their well-being, growth and goals.</p>
+        <p lang="ar">منذ أكثر من 25 عامًا وأنا أرافق النساء في عافيتهن ونموّهن وتحقيق أهدافهن.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- PASO 4: COMPARTIR -->
+<section class="share" id="compartir">
+  <div class="wrap">
+    <span class="step-tag"><span lang="es">Paso 4</span><span lang="en">Step 4</span><span lang="ar">الخطوة 4</span></span>
+    <h2 lang="es">Si esto hizo algo en ti, <em>compártelo</em></h2>
+    <h2 lang="en">If this touched you, <em>pass it on</em></h2>
+    <h2 lang="ar">إن لامس هذا شيئًا فيكِ، <em>شاركيه</em></h2>
+    <p class="big" lang="es">Alguien, en este momento, puede estar necesitando esta cajita.</p>
+    <p class="big" lang="en">Someone, right now, may be needing this box.</p>
+    <p class="big" lang="ar">ربما هناك من يحتاج إلى هذه العلبة في هذه اللحظة بالذات.</p>
+    <div class="btns">
+      <a class="cta" id="shareWa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
+        <span lang="es">Compartir por WhatsApp</span><span lang="en">Share on WhatsApp</span><span lang="ar">شاركي عبر واتساب</span>
+      </a>
+      <button class="ghost" id="shareMore" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>
+        <span lang="es">Compartir enlace</span><span lang="en">Share link</span><span lang="ar">شاركي الرابط</span>
+      </button>
+    </div>
+    <span class="copied" id="copied" aria-live="polite"></span>
   </div>
 </section>
 
 <footer>
   <p class="quote" lang="es">La felicidad está al alcance de tus manos.</p>
   <p class="quote" lang="en">Happiness is within your reach.</p>
+  <p class="quote" lang="ar">السعادة في متناول يديكِ.</p>
   <small>© 2026 Mindful Wellness &amp; Coaching LLC</small>
 </footer>
 
 <!-- BARRA INFERIOR TIPO APP -->
 <nav class="appbar" aria-label="Menú">
   <div class="in">
-    <a href="#guia" data-sec="guia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span lang="es">Cómo usar</span><span lang="en">How to</span></a>
-    <a href="#video" data-sec="video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg><span>Video</span></a>
-    <a href="#progreso" data-sec="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 14.5l2 2 4-4"/></svg><span lang="es">Mis días</span><span lang="en">My days</span></a>
-    <a href="#contacto" data-sec="contacto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+    <a href="#guia" data-sec="guia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span lang="es">Cómo usar</span><span lang="en">How to</span><span lang="ar">طريقة الاستخدام</span></a>
+    <a href="#progreso" data-sec="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 14.5l2 2 4-4"/></svg><span lang="es">Mis días</span><span lang="en">My days</span><span lang="ar">أيامي</span></a>
+    <a href="#contacto" data-sec="contacto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span lang="es">Síguenos</span><span lang="en">Follow</span><span lang="ar">تابعينا</span></a>
+    <a href="#compartir" data-sec="compartir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg><span lang="es">Compartir</span><span lang="en">Share</span><span lang="ar">شاركي</span></a>
   </div>
 </nav>
 
@@ -446,23 +536,52 @@ footer small{font-size:.82rem;opacity:.85}
     set: function(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
   };
   var lang = "es";
+  var LANGS = ["es","en","ar"];
+
+  /* enlace que se comparte: la página de venta de la cajita */
+  var SALE_URL = "https://yourmindfulwellnessny.github.io/cajita/";
+
+  /* ---- textos que cambia el script ---- */
+  var T = {
+    es:{ prev:"← Atrás", next:"Siguiente →", last:"Ver los 8 caminos →",
+         title:"Así funciona tu cajita · Mindful Wellness",
+         confirm:"¿Borrar tus días marcados?", day:"Día ",
+         msgs:["Tu primer día te está esperando 🌱","¡Qué bonito comienzo! Sigue así 💜","Vas creando un hábito. Estoy orgullosa de ti ✨","¡Ya casi! Mira todo lo que has crecido 🌸","¡Completaste tus 31 días! 🎉 Escríbenos y cuéntanos cómo te fue."],
+         share:"Esta cajita me hizo bien y pensé en ti 💜 «¿Qué Necesitas Escuchar Hoy?»: 31 mensajes para volver a ti. Mírala aquí: ",
+         copied:"¡Enlace copiado! Pégalo donde quieras compartirlo 💜" },
+    en:{ prev:"← Back", next:"Next →", last:"See the 8 paths →",
+         title:"How your box works · Mindful Wellness",
+         confirm:"Clear your marked days?", day:"Day ",
+         msgs:["Your first day is waiting for you 🌱","What a beautiful start! Keep going 💜","You're building a habit. I'm proud of you ✨","Almost there! Look how much you've grown 🌸","You completed your 31 days! 🎉 Write to us and tell us how it went."],
+         share:"This box did me good and I thought of you 💜 \"What Do You Need to Hear Today?\": 31 messages to come back to yourself. See it here: ",
+         copied:"Link copied! Paste it wherever you'd like to share it 💜" },
+    ar:{ prev:"→ رجوع", next:"التالي ←", last:"اكتشفي المسارات الثمانية ←",
+         title:"هكذا تعمل علبتكِ · Mindful Wellness",
+         confirm:"هل تريدين مسح الأيام التي حدّدتِها؟", day:"اليوم ",
+         msgs:["يومكِ الأول في انتظاركِ 🌱","يا لها من بداية جميلة! استمري 💜","أنتِ تبنين عادة جديدة. أنا فخورة بكِ ✨","اقتربتِ! انظري كم نموتِ 🌸","أكملتِ أيامكِ الـ31! 🎉 راسلينا وأخبرينا كيف كانت تجربتكِ."],
+         share:"هذه العلبة أفادتني وفكّرتُ فيكِ 💜 «ماذا تحتاجين أن تسمعي اليوم؟»: 31 رسالة لتعودي إلى نفسكِ. شاهديها هنا: ",
+         copied:"تم نسخ الرابط! الصقيه أينما تريدين مشاركته 💜" }
+  };
 
   /* ---- pasos de la guía ---- */
   var STEPS = [
     { flip:false, hl:{top:"27%",height:"30%"},
       es:{side:"Frente de la tarjeta", t:"1 · Lee", p:"Lee la frase del frente con calma. Es tu intención para empezar el día.", tip:"Puedes leerla en voz alta 💜"},
-      en:{side:"Front of the card", t:"1 · Read", p:"Read the phrase on the front slowly. It's your intention to start the day.", tip:"Try reading it out loud 💜"} },
+      en:{side:"Front of the card", t:"1 · Read", p:"Read the phrase on the front slowly. It's your intention to start the day.", tip:"Try reading it out loud 💜"},
+      ar:{side:"وجه البطاقة", t:"1 · اقرئي", p:"اقرئي العبارة على وجه البطاقة بهدوء. إنها نيّتكِ لبدء اليوم.", tip:"جرّبي قراءتها بصوت عالٍ 💜"} },
     { flip:true, hl:{top:"29.5%",height:"23%"},
       es:{side:"Reverso · Tarea del día", t:"2 · Haz", p:"Dale la vuelta. Arriba está la tarea del día: algo concreto y sencillo para hacer hoy.", tip:"Hazla cuando puedas durante tu día"},
-      en:{side:"Back · Today's task", t:"2 · Do", p:"Flip it over. At the top is today's task: something simple and concrete to do today.", tip:"Do it whenever you can during your day"} },
+      en:{side:"Back · Today's task", t:"2 · Do", p:"Flip it over. At the top is today's task: something simple and concrete to do today.", tip:"Do it whenever you can during your day"},
+      ar:{side:"ظهر البطاقة · مهمة اليوم", t:"2 · افعلي", p:"اقلبي البطاقة. في الأعلى مهمة اليوم: شيء بسيط وملموس تقومين به اليوم.", tip:"قومي بها متى استطعتِ خلال يومكِ"} },
     { flip:true, hl:{top:"52.5%",height:"19%"},
       es:{side:"Reverso · Reflexiona", t:"3 · Reflexiona", p:"Debajo hay una pregunta para escucharte. Escríbela, piénsala o llévala contigo.", tip:"Tu agenda es el lugar ideal para anotarla"},
-      en:{side:"Back · Reflect", t:"3 · Reflect", p:"Below is a question to listen to yourself. Write it down, think about it, or carry it with you.", tip:"Your planner is the perfect place to write it"} }
+      en:{side:"Back · Reflect", t:"3 · Reflect", p:"Below is a question to listen to yourself. Write it down, think about it, or carry it with you.", tip:"Your planner is the perfect place to write it"},
+      ar:{side:"ظهر البطاقة · تأمّلي", t:"3 · تأمّلي", p:"في الأسفل سؤال لتصغي إلى نفسكِ. اكتبيه، أو فكّري فيه، أو احمليه معكِ.", tip:"مفكّرتكِ هي المكان المثالي لتدوينه"} }
   ];
   var step = 0, card = $("#card"), hlF = $("#hlFront"), hlB = $("#hlBack");
 
   function renderStep(){
-    var s = STEPS[step], c = s[lang];
+    var s = STEPS[step], c = s[lang], t = T[lang];
     card.classList.toggle("flip", s.flip);
     var hl = s.flip ? hlB : hlF, other = s.flip ? hlF : hlB;
     other.classList.remove("show");
@@ -473,24 +592,23 @@ footer small{font-size:.82rem;opacity:.85}
     $$(".tab").forEach(function(b,i){ b.classList.toggle("on", i===step); b.setAttribute("aria-selected", i===step); });
     $$("#dots i").forEach(function(d,i){ d.classList.toggle("on", i===step); });
     $("#prev").disabled = step===0;
-    $("#next").innerHTML = step===2
-      ? (lang==="es" ? "Ver video →" : "Watch video →")
-      : (lang==="es" ? "Siguiente →" : "Next →");
+    $("#prev").textContent = t.prev;
+    $("#next").textContent = step===2 ? t.last : t.next;
   }
   $$(".tab").forEach(function(b){ b.addEventListener("click", function(){ step = +b.dataset.step; renderStep(); }); });
   $("#prev").addEventListener("click", function(){ if(step>0){ step--; renderStep(); } });
   $("#next").addEventListener("click", function(){
-    if(step<2){ step++; renderStep(); } else { location.hash = ""; $("#video").scrollIntoView({behavior:"smooth"}); }
+    if(step<2){ step++; renderStep(); } else { $("#caminos").scrollIntoView({behavior:"smooth"}); }
   });
   $("#stage").addEventListener("click", function(){
     hlF.classList.remove("show"); hlB.classList.remove("show");
     card.classList.toggle("flip");
   });
-  // deslizar con el dedo
   var x0 = null;
   $("#stage").addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; }, {passive:true});
   $("#stage").addEventListener("touchend", function(e){
     if(x0===null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if(lang==="ar") dx = -dx;
     if(Math.abs(dx) > 50){ e.preventDefault(); step = Math.max(0, Math.min(2, step + (dx<0?1:-1))); renderStep(); }
   });
 
@@ -508,21 +626,16 @@ footer small{font-size:.82rem;opacity:.85}
   for(var i=1;i<=31;i++){
     var b = document.createElement("button");
     b.type = "button"; b.className = "day"; b.dataset.d = i;
-    b.innerHTML = "<span>"+i+"</span>"; b.setAttribute("aria-label", "Día "+i);
+    b.innerHTML = "<span>"+i+"</span>";
     daysEl.appendChild(b);
   }
   function renderDays(){
-    var n = 0;
-    $$(".day").forEach(function(b){ var on = !!done[b.dataset.d]; b.classList.toggle("done", on); b.setAttribute("aria-pressed", on); if(on) n++; });
+    var n = 0, t = T[lang];
+    $$(".day").forEach(function(b){ var on = !!done[b.dataset.d]; b.classList.toggle("done", on); b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", t.day + b.dataset.d); if(on) n++; });
     $("#count").textContent = n;
     $("#bar").style.width = (n/31*100)+"%";
-    var es = lang==="es", msg;
-    if(n===0) msg = es ? "Tu primer día te está esperando 🌱" : "Your first day is waiting for you 🌱";
-    else if(n<8) msg = es ? "¡Qué bonito comienzo! Sigue así 💜" : "What a beautiful start! Keep going 💜";
-    else if(n<20) msg = es ? "Vas creando un hábito. Estoy orgullosa de ti ✨" : "You're building a habit. I'm proud of you ✨";
-    else if(n<31) msg = es ? "¡Ya casi! Mira todo lo que has crecido 🌸" : "Almost there! Look how much you've grown 🌸";
-    else msg = es ? "¡Completaste tus 31 días! 🎉 Escríbeme y cuéntame cómo te fue." : "You completed your 31 days! 🎉 Write to me and tell me how it went.";
-    $("#tmsg").textContent = msg;
+    var k = n===0 ? 0 : n<8 ? 1 : n<20 ? 2 : n<31 ? 3 : 4;
+    $("#tmsg").textContent = t.msgs[k];
   }
   daysEl.addEventListener("click", function(e){
     var b = e.target.closest(".day"); if(!b) return;
@@ -530,7 +643,24 @@ footer small{font-size:.82rem;opacity:.85}
     store.set(KEY, JSON.stringify(done)); renderDays();
   });
   $("#reset").addEventListener("click", function(){
-    if(confirm(lang==="es" ? "¿Borrar tus días marcados?" : "Clear your marked days?")){ done = {}; store.set(KEY,"{}"); renderDays(); }
+    if(confirm(T[lang].confirm)){ done = {}; store.set(KEY,"{}"); renderDays(); }
+  });
+
+  /* ---- compartir ---- */
+  function shareUrl(){ return SALE_URL + (lang==="es" ? "" : "?lang=en"); }
+  function renderShare(){
+    $("#shareWa").href = "https://wa.me/?text=" + encodeURIComponent(T[lang].share + shareUrl());
+  }
+  $("#shareMore").addEventListener("click", function(){
+    var txt = T[lang].share, url = shareUrl();
+    if(navigator.share){
+      navigator.share({title:"¿Qué Necesitas Escuchar Hoy? · Mindful Wellness", text:txt, url:url}).catch(function(){});
+      return;
+    }
+    var done2 = function(){ $("#copied").textContent = T[lang].copied; setTimeout(function(){ $("#copied").textContent = ""; }, 3500); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt + url).then(done2, function(){ prompt("", txt + url); });
+    } else { prompt("", txt + url); }
   });
 
   /* ---- barra inferior: resaltar sección ---- */
@@ -538,29 +668,30 @@ footer small{font-size:.82rem;opacity:.85}
   if("IntersectionObserver" in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if(en.isIntersecting){
-        links.forEach(function(a){ a.classList.toggle("on", a.dataset.sec === en.target.id); });
+        links.forEach(function(a){ a.classList.toggle("on", a.dataset.sec === en.target.dataset.nav); });
       }});
     }, {rootMargin:"-45% 0px -50% 0px"});
-    ["guia","video","caminos","progreso","preguntas","planner","contacto"].forEach(function(id){ var el = document.getElementById(id); if(el) io.observe(el); });
+    var map = {guia:"guia",caminos:"guia",progreso:"progreso",preguntas:"progreso",contacto:"contacto",compartir:"compartir"};
+    Object.keys(map).forEach(function(id){ var el = document.getElementById(id); if(el){ el.dataset.nav = map[id]; io.observe(el); } });
   }
 
   /* ---- idioma ---- */
-  var titles = {es:"Bienvenida a tu cajita · Mindful Wellness", en:"Welcome to your box of wellness · Mindful Wellness"};
   function setLang(l){
+    if(LANGS.indexOf(l) < 0) l = "es";
     lang = l;
-    document.documentElement.dataset.lang = l;
-    document.documentElement.lang = l;
-    document.title = titles[l];
+    var root = document.documentElement;
+    root.dataset.lang = l; root.lang = l; root.dir = (l==="ar" ? "rtl" : "ltr");
+    document.title = T[l].title;
     $$("[data-set-lang]").forEach(function(b){ b.classList.toggle("on", b.dataset.setLang === l); });
     store.set("cajita-lang", l);
-    renderStep(); renderDays();
+    renderStep(); renderDays(); renderShare();
   }
   $$("[data-set-lang]").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.setLang); }); });
   var param = new URLSearchParams(location.search).get("lang");
-  var start = param || store.get("cajita-lang") || ((navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en");
-  setLang(start === "en" ? "en" : "es");
+  var nav = (navigator.language || "es").toLowerCase();
+  var guess = nav.indexOf("es")===0 ? "es" : nav.indexOf("ar")===0 ? "ar" : "en";
+  setLang(param || store.get("cajita-lang") || guess);
 })();
 </script>
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
